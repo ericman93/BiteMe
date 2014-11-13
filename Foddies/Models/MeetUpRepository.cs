@@ -29,7 +29,7 @@ namespace Foddies.Models
                         Latitude = 32.058,
                         Longitude = 34.779
                     },
-                    MeetUpFoodType = FoodType.Home,
+                    MeetUpFoodType = HostType.Home,
                     Address = "יצחק רבין 14, חדרה",
                     Title = "משפחת זריהן מארחת בשישי",
                     Capacity = 3,
@@ -58,7 +58,7 @@ namespace Foddies.Models
                         Latitude = 32.065,
                         Longitude = 34.866
                     },
-                    MeetUpFoodType = FoodType.Resturant,
+                    MeetUpFoodType = HostType.Resturant,
                     Address = "הרצוג 13, תל אביב",
                     Title = "BBB",
                     Capacity = 2,
@@ -87,7 +87,7 @@ namespace Foddies.Models
                         Latitude = 32.003,
                         Longitude = 34.780
                     },
-                    MeetUpFoodType = FoodType.Home,
+                    MeetUpFoodType = HostType.Home,
                     Address = "המסגר 14, חיפה",
                     Title = "ראש השנה אצל משפחת גולן",
                     Capacity = 3,
