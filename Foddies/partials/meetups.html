@@ -15,7 +15,7 @@
             <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher">
                 <a href="" ng-click="selectMeetup(request)">
                     <span class="glyphicon" ng-class="request.HostType == 0 ? 'glyphicon-home' : 'glyphicon-glass'" aria-hidden="true"> </span>
-                    {{request.Title}} 
+                    {{request.Title}}
                 </a>
             </li>
         </ul>
@@ -27,4 +27,10 @@
                     on-click="markerClick()" ng-if="selectedRequest" title="Dine Place" animation="DROP"></marker>-->
         </map>
     </div>
+</div>
+
+<div id="newRequest">
+    <button id="newReuqestBtn">
+        <img src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/bt_speed_dial_2x.png">
+    </button>
 </div>
