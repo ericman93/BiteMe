@@ -7,10 +7,8 @@ namespace Foddies.Models
 {
     public class MeetUpApproveInfo
     {
-        public int MeetUpId { get; set; }
-
         public int RequestingUserId { get; set; }
 
-        public bool? isAccepted { get; set; }
+        public bool isAccepted { get; set; }
     }
 }

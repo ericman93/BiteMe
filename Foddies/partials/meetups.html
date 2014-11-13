@@ -1,5 +1,5 @@
 ﻿<div id="meetups">
-    <div id="filterBar">
+    <div id="filterBar" class="rtl">
         <div id="filterButtons" class="container">
             <button type="button" class="btn btn-default" ng-click="filter.vegi = !filter.vegi" ng-class="filter.vegi ? 'btn-success' : ''">
                 <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
@@ -19,9 +19,9 @@
     </div>
 
     <div id="map">
-        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="8" id="mapDirective">
-            <marker id="meetupLocation" position="{{selectedRequest.MeetUpLocation.Latitude}},{{selectedRequest.MeetUpLocation.Longitude}}"
-                    ng-if="selectedRequest" title="Dine Place"></marker>
+        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="12" id="mapDirective">
+            <!--<marker id="meetupLocation" position="{{selectedRequest.MeetUpLocation.Latitude}},{{selectedRequest.MeetUpLocation.Longitude}}"
+                    on-click="markerClick()" ng-if="selectedRequest" title="Dine Place" animation="DROP"></marker>-->
         </map>
     </div>
 </div>

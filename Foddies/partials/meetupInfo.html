@@ -1,0 +1,29 @@
+﻿<div class="rtl">
+    <div class="modal-header">
+        <h3 class="modal-title">{{meetup.Title}}</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table">
+            <tr>
+                <th>מארח</th>
+                <td>{{meetup.Host.Name}}</td>
+            </tr>
+            <tr>
+                <th>תאריך</th>
+                <td>{{meetup.MeetUpDate}}</td>
+            </tr>
+            <tr>
+                <th>כשר</th>
+                <td><span class="glyphicon" ng-class="meetup.IsKosher | checkmark"></span></td>
+            </tr>
+            <tr>
+                <th>צמחוני</th>
+                <td><span class="glyphicon" ng-class="meetup.IsVegeterian | checkmark"></span></td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="askToJoin()">הצטרף</button>
+        <button class="btn btn-warning" ng-click="close()">סגור</button>
+    </div>
+</div>

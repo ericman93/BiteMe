@@ -1,6 +1,7 @@
 ﻿#requests {
     float: right;
     width: 15%;
+    direction: rtl
 }
 
 #map {
@@ -28,3 +29,6 @@ body,
     height: 40px;
 }
 
+.rtl{
+    direction: rtl;
+}
