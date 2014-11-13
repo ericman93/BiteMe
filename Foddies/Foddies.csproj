@@ -165,11 +165,7 @@
     <Compile Include="Models\FoodTypeEnum.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
     <Compile Include="Models\UserRepository.cs" />
-<<<<<<< HEAD
     <Compile Include="Models\HostTypeEnum.cs" />
-=======
-    <Compile Include="Models\FoodType.cs" />
->>>>>>> 1f0de597c188fcc8c45b7a23888c15dcdd271560
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MeetUp.cs" />
     <Compile Include="Models\User.cs" />
