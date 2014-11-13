@@ -110,5 +110,7 @@ namespace Foddies.Models
         {
             return _meetUps.FirstOrDefault(meetUp => meetUp.Id == meetUpId);
         }
+
+
     }
 }

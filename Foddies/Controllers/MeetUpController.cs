@@ -15,9 +15,13 @@ namespace Foddies.Controllers
             return MeetUpRepository.GetAllMeetUps();
         }
 
-        public MeetUp Get(int meetUpId)
+        public MeetUp Get(int id)
         {
-            return MeetUpRepository.GetMeetUpById(meetUpId);
+            return MeetUpRepository.GetMeetUpById(id);
+        }
+
+        public void Post([FromBody]MeetUp newMeetUp)
+        {
         }
     }
 }
