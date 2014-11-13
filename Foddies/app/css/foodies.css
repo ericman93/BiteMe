@@ -1,14 +1,14 @@
-﻿#requests{
+﻿#requests {
     float: left;
-    width: 20%;
+    width: 15%;
 }
 
-#map{
+#map {
     float: right;
-    width: 80%;
+    width: 85%;
 }
 
-#mapDirective{
+#mapDirective {
     height: 100%;
 }
 
@@ -16,6 +16,15 @@ html,
 body,
 #content,
 #meetups,
-#map{
+#map {
     height: 100%;
 }
+
+.centerText {
+    text-align: center;
+}
+
+#filterBar {
+    height: 40px;
+}
+

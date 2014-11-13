@@ -30,34 +30,3 @@ c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\bin\Antlr3.R
 c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\obj\Debug\Foddies.csprojResolveAssemblyReference.cache
 c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\obj\Debug\Foddies.dll
 c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\obj\Debug\Foddies.pdb
-C:\BiteMe\Foddies\bin\Foddies.dll
-C:\BiteMe\Foddies\bin\Foddies.pdb
-C:\BiteMe\Foddies\bin\Antlr3.Runtime.dll
-C:\BiteMe\Foddies\bin\Microsoft.Web.Infrastructure.dll
-C:\BiteMe\Foddies\bin\Newtonsoft.Json.dll
-C:\BiteMe\Foddies\bin\System.Net.Http.Formatting.dll
-C:\BiteMe\Foddies\bin\System.Web.Helpers.dll
-C:\BiteMe\Foddies\bin\System.Web.Http.dll
-C:\BiteMe\Foddies\bin\System.Web.Http.WebHost.dll
-C:\BiteMe\Foddies\bin\System.Web.Mvc.dll
-C:\BiteMe\Foddies\bin\System.Web.Optimization.dll
-C:\BiteMe\Foddies\bin\System.Web.Razor.dll
-C:\BiteMe\Foddies\bin\System.Web.WebPages.Deployment.dll
-C:\BiteMe\Foddies\bin\System.Web.WebPages.dll
-C:\BiteMe\Foddies\bin\System.Web.WebPages.Razor.dll
-C:\BiteMe\Foddies\bin\WebGrease.dll
-C:\BiteMe\Foddies\bin\Newtonsoft.Json.xml
-C:\BiteMe\Foddies\bin\System.Net.Http.Formatting.xml
-C:\BiteMe\Foddies\bin\System.Web.Helpers.xml
-C:\BiteMe\Foddies\bin\System.Web.Http.xml
-C:\BiteMe\Foddies\bin\System.Web.Http.WebHost.xml
-C:\BiteMe\Foddies\bin\System.Web.Mvc.xml
-C:\BiteMe\Foddies\bin\System.Web.Optimization.xml
-C:\BiteMe\Foddies\bin\System.Web.Razor.xml
-C:\BiteMe\Foddies\bin\System.Web.WebPages.xml
-C:\BiteMe\Foddies\bin\System.Web.WebPages.Deployment.xml
-C:\BiteMe\Foddies\bin\System.Web.WebPages.Razor.xml
-C:\BiteMe\Foddies\bin\Antlr3.Runtime.pdb
-C:\BiteMe\Foddies\obj\Debug\Foddies.csprojResolveAssemblyReference.cache
-C:\BiteMe\Foddies\obj\Debug\Foddies.dll
-C:\BiteMe\Foddies\obj\Debug\Foddies.pdb
