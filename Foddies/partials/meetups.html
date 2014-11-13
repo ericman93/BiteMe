@@ -1,7 +1,7 @@
 ﻿<div id="meetups">
     <div id="filterBar">
         <div id="filterButtons" class="container">
-            <button type="button" class="btn btn-default" ng-click="filter.vegi = !filter.vegi">
+            <button type="button" class="btn btn-default" ng-click="filter.vegi = !filter.vegi" ng-class="filter.vegi ? 'btn-success' : ''">
                 <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
             </button>
             <button type="button" class="btn btn-default">
@@ -12,7 +12,7 @@
 
     <div id="requests">
         <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi">
+            <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher">
                 <a href="" ng-click="selectMeetup(request)">{{request.Name}}</a>
             </li>
         </ul>

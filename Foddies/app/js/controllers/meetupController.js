@@ -33,5 +33,10 @@
           return $scope.filter.vegi == false ||
                  ($scope.filter.vegi == true && request.IsVegi == true);
       };
+
+      $scope.filterKosher = function (request) {
+          return $scope.filter.kosher == false ||
+                 ($scope.filter.kosher == true && request.IsKosher == true);
+      };
   }
 ]);
