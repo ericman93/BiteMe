@@ -111,6 +111,9 @@ namespace Foddies.Models
             return _meetUps.FirstOrDefault(meetUp => meetUp.Id == meetUpId);
         }
 
-
+        public static void AddMeetUp(MeetUp newMeetup)
+        {
+            _meetUps.Add(newMeetup);
+        }
     }
 }
