@@ -49,7 +49,7 @@ namespace Foddies.Controllers
             }
             if (foundUser.Password == password)
             {
-                HttpContext.Current.Session["Username"] = foundUser.Email;
+                HttpContext.Current.Session["Id"] = foundUser.Id;
                 response.StatusCode = HttpStatusCode.OK;
             }
             return response;
