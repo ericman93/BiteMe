@@ -2,8 +2,8 @@
   function (Meetups, $scope, $modalInstance, meetup) {
       $scope.meetup = meetup;
 
-      $scope.askToJoin = function (meetup) {
-          Meetups.askToJoin(meetup.Id).then(function () {
+      $scope.askToJoin = function () {
+          Meetups.askToJoin($scope.meetup.Id).then(function () {
               console.log('joined :)')
           }, function (error) {
               alert(error)

@@ -26,13 +26,11 @@
 
         var data = {
             MeetUpId: meetupId,
-            RequestingUserId: Auth.userId,
-            isAccepted: true,
         };
 
-        $http.post(meetupApiUrl)
+        $http.post(meetupApiUrl+Auth.userId, data)
         .success(function (meetups) {
-            deferred.resolve()
+            deferred.resolve("ווהוו ביקשת להצטרף")
         })
         .error(function (data, status, headers, config) {
             var errorMessage = data.Message;
