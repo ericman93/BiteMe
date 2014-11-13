@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Foddies.Models
 {
-    public enum HostType
+    public enum HostTypeEnum
     {
         Home,
         Resturant
