@@ -114,7 +114,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\js\filtters\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +157,11 @@
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="app\js\controllers\loginController.js" />
     <Content Include="app\js\controllers\meetupController.js" />
+    <Content Include="app\js\controllers\meetupInfoController.js" />
     <Content Include="app\js\directives\angular-google-maps.min.js" />
     <Content Include="app\js\directives\map.js" />
     <Content Include="app\js\directives\map_controller.js" />
+    <Content Include="app\js\filtters\checkmarkFilter.js" />
     <Content Include="app\js\lib\bootstrap.js" />
     <Content Include="app\js\lib\bootstrap.min.js" />
     <Content Include="app\js\lib\bower_components\angular-route\angular-route.js" />
@@ -175,6 +176,7 @@
     <Content Include="app\js\lib\respond.js" />
     <Content Include="app\js\lib\respond.min.js" />
     <None Include="app\js\lib\_references.js" />
+    <Content Include="app\js\lib\ui-bootstrap-custom-tpls-0.10.0.js" />
     <Content Include="app\js\services\authService.js" />
     <Content Include="app\js\services\meetupsService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -219,6 +221,7 @@
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\respond.min.js" />
     <Content Include="partials\login.html" />
+    <Content Include="partials\meetupInfo.html" />
     <Content Include="partials\meetups.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

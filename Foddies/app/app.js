@@ -5,7 +5,7 @@
 var ngMap = angular.module('ngMap', []);
 
 var foodiesApp = angular.module('foodiesApp', [
-  'ngRoute', 'ngMap',
+  'ngRoute', 'ngMap', 'ui.bootstrap'
 ]);
 
 foodiesApp.config(['$routeProvider',

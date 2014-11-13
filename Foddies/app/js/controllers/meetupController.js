@@ -1,14 +1,15 @@
-﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope',
-  function (Meetups, $scope) {
+﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope', '$modal',
+  function (Meetups, $scope, $modal) {
       var israel = {
           Latitude: 31.850033,
           Longitude: 34.6500523
       }
+      var currnetMarker = undefined;
+
       $scope.filter = {
           vegi: false,
           kosher: false
       };
-      $scope.selectedRequest = undefined;
 
       $scope.requetsts = Meetups.getMeetups().then(function (data) {
           console.log(data)
@@ -18,8 +19,25 @@
           alert(error)
       });
 
+      $scope.selectedRequest = undefined;
+
       $scope.selectMeetup = function (meetup) {
           $scope.selectedRequest = meetup;
+
+          if (currnetMarker != undefined) {
+              currnetMarker.setMap(undefined);
+          }
+
+          currnetMarker = new google.maps.Marker({
+              position: new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude),
+              map: $scope.map,
+              draggable: false,
+              animation: google.maps.Animation.DROP,
+          });
+
+          google.maps.event.addListener(currnetMarker, 'click', function () {
+              showModal(meetup);
+          });
       }
 
       $scope.getLocation = function () {
@@ -31,6 +49,7 @@
           }
       }
 
+
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||
                  ($scope.filter.vegi == true && request.IsVegeterian == true);
@@ -40,5 +59,23 @@
           return $scope.filter.kosher == false ||
                  ($scope.filter.kosher == true && request.IsKosher == true);
       };
+
+      function showModal(meetup) {
+          var modalInstance = $modal.open({
+              templateUrl: 'partials/meetupInfo.html',
+              controller: 'MeetupInfoController',
+              size: 'lg',
+              resolve: {
+                  meetup: function () {
+                      return meetup;
+                  }
+              }
+          });
+
+          modalInstance.result.then(function (selectedItem) {
+              $scope.selected = selectedItem;
+          }, function () {
+          });
+      }
   }
 ]);
