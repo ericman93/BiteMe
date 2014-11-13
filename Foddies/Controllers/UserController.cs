@@ -27,9 +27,13 @@ namespace Foddies.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]User newUser)
+        public HttpResponseMessage Post([FromBody]User newUser)
         {
             UserList.Add(newUser);
+
+            HttpResponseMessage response = new HttpResponseMessage();
+            response.StatusCode = HttpStatusCode.OK;
+            return response;
         }
 
         // POST api/<controller>
@@ -45,7 +49,7 @@ namespace Foddies.Controllers
             }
             if (foundUser.Password == password)
             {
-                HttpContext.Current.Session["Username"] = foundUser.Email;
+                HttpContext.Current.Session["Id"] = foundUser.Id;
                 response.StatusCode = HttpStatusCode.OK;
             }
             return response;
