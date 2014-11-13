@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Foddies.Models
 {
-    class Location
+    public class Location
     {
         public double Longitude { get; set; }
 
