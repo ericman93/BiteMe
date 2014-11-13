@@ -115,5 +115,10 @@ namespace Foddies.Models
         {
             _meetUps.Add(newMeetup);
         }
+
+        public static IEnumerable<MeetUp> GetMeetUpsByHostId(int hostId)
+        {
+            return _meetUps.Where(meetUp => meetUp.Host.Id == hostId);
+        }
     }
 }
