@@ -26,5 +26,7 @@ namespace Foddies.Models
         public bool IsVegeterian { get; set; }
 
         public DateTime MeetUpDate { get; set; }
+
+        public IEnumerable<UserRequest> UserRequests { get; set; }
     }
 }

@@ -148,6 +148,7 @@
     <Compile Include="Models\MeetUp.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\MeetUpRepository.cs" />
+    <Compile Include="Models\UserRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
