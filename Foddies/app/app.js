@@ -15,6 +15,10 @@ foodiesApp.config(['$routeProvider',
             templateUrl: 'partials/meetups.html',
             controller: 'MeetupController'
         }).
+        when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'LoginController'
+        }).
         otherwise({
             redirectTo: '/meetups'
         });
