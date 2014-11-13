@@ -17,6 +17,8 @@ namespace Foddies.Models
 
         public FoodType MeetUpFoodType { get; set; }
 
+        public string Address { get; set; }
+        
         public int Capacity { get; set; }
 
         public string Title { get; set; }
@@ -27,6 +29,6 @@ namespace Foddies.Models
 
         public DateTime MeetUpDate { get; set; }
 
-        public IEnumerable<UserRequest> UserRequests { get; set; }
+        public List<UserRequest> UserRequests { get; set; }
     }
 }

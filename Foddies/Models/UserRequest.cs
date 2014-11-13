@@ -9,6 +9,7 @@ namespace Foddies.Models
     {
         public User RequestingUser { get; set; }
 
-        public bool Accepted { get; set; }
+        // null means that the offer is pending
+        public bool? Accepted { get; set; }
     }
 }
