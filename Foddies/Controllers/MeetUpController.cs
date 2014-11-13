@@ -22,6 +22,7 @@ namespace Foddies.Controllers
 
         public void Post([FromBody]MeetUp newMeetUp)
         {
+            MeetUpRepository.AddMeetUp(newMeetUp);
         }
     }
 }
