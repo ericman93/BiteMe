@@ -77,12 +77,12 @@ namespace Foddies.Models
             #endregion
         }
 
-        public IEnumerable<MeetUp> GetAllMeetUps()
+        public static IEnumerable<MeetUp> GetAllMeetUps()
         {
             return _meetUps;
         }
 
-        public MeetUp GetMeetUpById(int meetUpId)
+        public static MeetUp GetMeetUpById(int meetUpId)
         {
             return _meetUps.FirstOrDefault(meetUp => meetUp.Id == meetUpId);
         }

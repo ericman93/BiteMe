@@ -7,6 +7,7 @@ namespace Foddies.Models
 {
     public enum FoodType
     {
-
+        Home,
+        Resturant
     }
 }
