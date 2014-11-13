@@ -1,12 +1,11 @@
-﻿foodiesApp.controller('MeetupInfoController', ['Meetups', '$scope', '$modalInstance', 'meetup',
-  function (Meetups, $scope, $modalInstance, meetup) {
-      $scope.meetup = meetup;
+﻿foodiesApp.controller('MeetupInfoController', ['Meetups', '$scope', '$modalInstance', 'state',
+  function (Meetups, $scope, $modalInstance, state) {
+      $scope.meetup = state;
 
       $scope.askToJoin = function () {
           $scope.message = undefined;
 
           Meetups.askToJoin($scope.meetup.Id).then(function () {
-              console.log('joined :)')
               $scope.result = true;
               $scope.message = "ווהוו בקשתך מחכה לתגובה מהמארח"
           }, function (error) {
