@@ -163,7 +163,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodTypes.cs" />
-    <Compile Include="Models\HostType.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
@@ -181,15 +180,14 @@
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\foodies.css" />
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\js\controllers\meetupRequestsController.js" />
     <Content Include="app\js\controllers\loginController.js" />
     <Content Include="app\js\controllers\meetupController.js" />
     <Content Include="app\js\controllers\meetupInfoController.js" />
     <Content Include="app\js\directives\angular-google-maps.min.js" />
     <Content Include="app\js\directives\map.js" />
     <Content Include="app\js\directives\map_controller.js" />
-    <Content Include="app\js\filtters\alertFilter.js" />
     <Content Include="app\js\filtters\checkmarkFilter.js" />
-    <Content Include="app\js\filtters\hostTypeFilter.js" />
     <Content Include="app\js\lib\bootstrap.js" />
     <Content Include="app\js\lib\bootstrap.min.js" />
     <Content Include="app\js\lib\bower_components\angular-route\angular-route.js" />
@@ -248,6 +246,7 @@
     <Content Include="Content\js\modernizr-2.6.2.js" />
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\respond.min.js" />
+    <Content Include="partials\meetupRequests.html" />
     <Content Include="partials\login.html" />
     <Content Include="partials\meetupInfo.html" />
     <Content Include="partials\meetups.html" />
