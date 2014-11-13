@@ -2,14 +2,20 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('foodiesApp', [
-  'ngRoute',
+var ngMap = angular.module('ngMap', []);
+
+var foodiesApp = angular.module('foodiesApp', [
+  'ngRoute', 'ngMap',
 ]);
 
-phonecatApp.config(['$routeProvider',
+foodiesApp.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
+        when('/meetups', {
+            templateUrl: 'partials/meetups.html',
+            controller: 'MeetupController'
+        }).
         otherwise({
-            redirectTo: '/phones'
+            redirectTo: '/meetups'
         });
   }]);

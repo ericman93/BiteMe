@@ -1,0 +1,21 @@
+﻿#requests{
+    float: left;
+    width: 20%;
+}
+
+#map{
+    float: right;
+    width: 80%;
+}
+
+#mapDirective{
+    height: 100%;
+}
+
+html,
+body,
+#content,
+#meetups,
+#map{
+    height: 100%;
+}
