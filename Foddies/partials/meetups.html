@@ -1,9 +1,21 @@
 ﻿<div id="meetups">
+    <div id="filterBar">
+        <div id="filterButtons" class="container">
+            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+        </div>
+    </div>
+
     <div id="requests">
-        Requests will be here
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" ng-repeat="request in requetsts"><a href="" ng-click="selectMeetup(request)">{{request.Name}}</a></li>
+        </ul>
     </div>
 
     <div id="map">
-        <map center="{{selectedLocation.lat}}, {{selectedLocation.lon}}" zoom="8" id="mapDirective"></map>
+        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="8" id="mapDirective">
+            <marker id="meetupLocation" position="{{selectedRequest.Location.Latitude}},{{selectedRequest.Location.Longitude}}"
+                    ng-if="selectedRequest" title="Dine Place"></marker>
+        </map>
     </div>
 </div>
