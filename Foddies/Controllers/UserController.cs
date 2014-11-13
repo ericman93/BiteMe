@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web;
 
 namespace Foddies.Controllers
 {
@@ -35,10 +36,19 @@ namespace Foddies.Controllers
         public HttpResponseMessage Post([FromBody]string email, [FromBody]string password)
         {
             HttpResponseMessage response = new HttpResponseMessage();
+            response.StatusCode = HttpStatusCode.Unauthorized;
+
             User foundUser = UserList.FirstOrDefault(user => user.Email == email);
             if(foundUser == null)
-                   response.StatusCode= HttpStatusCode.Unauthorized;
-            Session["Username"]= 
+            {
+                   return response;
+            }
+            if (foundUser.Password == password)
+            {
+                HttpContext.Current.Session["Username"] = foundUser.Email;
+                response.StatusCode = HttpStatusCode.OK;
+            }
+            return response;
         }
     }
 }

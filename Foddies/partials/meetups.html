@@ -1,20 +1,26 @@
 ﻿<div id="meetups">
     <div id="filterBar">
         <div id="filterButtons" class="container">
-            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span></button>
-            <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+            <button type="button" class="btn btn-default" ng-click="filter.vegi = !filter.vegi" ng-class="filter.vegi ? 'btn-success' : ''">
+                <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default" ng-click="filter.kosher = !filter.kosher" ng-class="filter.kosher ? 'btn-info' : ''">
+                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+            </button>
         </div>
     </div>
 
     <div id="requests">
         <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" ng-repeat="request in requetsts"><a href="" ng-click="selectMeetup(request)">{{request.Name}}</a></li>
+            <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher">
+                <a href="" ng-click="selectMeetup(request)">{{request.Title}}</a>
+            </li>
         </ul>
     </div>
 
     <div id="map">
         <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="8" id="mapDirective">
-            <marker id="meetupLocation" position="{{selectedRequest.Location.Latitude}},{{selectedRequest.Location.Longitude}}"
+            <marker id="meetupLocation" position="{{selectedRequest.MeetUpLocation.Latitude}},{{selectedRequest.MeetUpLocation.Longitude}}"
                     ng-if="selectedRequest" title="Dine Place"></marker>
         </map>
     </div>

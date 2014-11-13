@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\js\filtters\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +138,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeetUpController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -144,11 +146,37 @@
     <Compile Include="Models\FoodType.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MeetUp.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Models\MeetUpRepository.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\css\bootstrap.css" />
+    <Content Include="app\css\bootstrap.min.css" />
+    <Content Include="app\css\foodies.css" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\js\controllers\meetupController.js" />
+    <Content Include="app\js\directives\angular-google-maps.min.js" />
+    <Content Include="app\js\directives\map.js" />
+    <Content Include="app\js\directives\map_controller.js" />
+    <Content Include="app\js\lib\bootstrap.js" />
+    <Content Include="app\js\lib\bootstrap.min.js" />
+    <Content Include="app\js\lib\bower_components\angular-route\angular-route.js" />
+    <Content Include="app\js\lib\bower_components\angular-route\angular-route.min.js" />
+    <Content Include="app\js\lib\bower_components\angular\angular-csp.css" />
+    <Content Include="app\js\lib\bower_components\angular\angular.js" />
+    <Content Include="app\js\lib\bower_components\angular\angular.min.js" />
+    <None Include="app\js\lib\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\js\lib\jquery-1.10.2.js" />
+    <Content Include="app\js\lib\jquery-1.10.2.min.js" />
+    <Content Include="app\js\lib\modernizr-2.6.2.js" />
+    <Content Include="app\js\lib\respond.js" />
+    <Content Include="app\js\lib\respond.min.js" />
+    <None Include="app\js\lib\_references.js" />
+    <Content Include="app\js\services\authService.js" />
+    <Content Include="app\js\services\meetupsService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -169,12 +197,28 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\js\lib\bower_components\angular-route\.bower.json" />
+    <Content Include="app\js\lib\bower_components\angular-route\angular-route.min.js.map" />
+    <Content Include="app\js\lib\bower_components\angular-route\bower.json" />
+    <Content Include="app\js\lib\bower_components\angular-route\package.json" />
+    <Content Include="app\js\lib\bower_components\angular-route\README.md" />
+    <Content Include="app\js\lib\bower_components\angular\.bower.json" />
+    <Content Include="app\js\lib\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="app\js\lib\bower_components\angular\angular.min.js.map" />
+    <Content Include="app\js\lib\bower_components\angular\bower.json" />
+    <Content Include="app\js\lib\bower_components\angular\package.json" />
+    <Content Include="app\js\lib\bower_components\angular\README.md" />
+    <Content Include="app\js\lib\jquery-1.10.2.min.map" />
     <None Include="Content\js\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\js\jquery-1.10.2.js" />
     <Content Include="Content\js\jquery-1.10.2.min.js" />
     <Content Include="Content\js\modernizr-2.6.2.js" />
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\respond.min.js" />
+    <Content Include="partials\meetups.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
