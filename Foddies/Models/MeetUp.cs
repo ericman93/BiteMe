@@ -9,7 +9,7 @@ namespace Foddies.Models
     {
         public int Id { get; set; }
 
-        public string Host { get; set; } //TODO: string replace with User.
+        public User Host { get; set; } 
 
         public Location MeetUpLocation { get; set; }
 
@@ -20,6 +20,10 @@ namespace Foddies.Models
         public int Capacity { get; set; }
 
         public string Title { get; set; }
+
+        public bool IsKosher { get; set; }
+
+        public bool IsVegeterian { get; set; }
 
         public DateTime MeetUpDate { get; set; }
     }

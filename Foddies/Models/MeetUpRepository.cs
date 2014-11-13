@@ -32,7 +32,15 @@ namespace Foddies.Models
                     MeetUpFoodType = FoodType.Home,
                     Title = "משפחת זריהן מארחת בשישי",
                     Capacity = 3,
-                    Host = "Dani"
+                    Host = new User
+                    {
+                        Id=1, 
+                        Name="Ziv", 
+                        Password="123",
+                        Email="ziv@mail.com"
+                    },
+                    IsKosher = true,
+                    IsVegeterian = false
                 },
                 new MeetUp
                 {
@@ -51,7 +59,15 @@ namespace Foddies.Models
                     MeetUpFoodType = FoodType.Resturant,
                     Title = "BBB",
                     Capacity = 2,
-                    Host = "Omer"
+                    Host = new User()
+                    {
+                        Id=2, 
+                        Name="Lian",
+                        Password="123", 
+                        Email="lian@mail.com" 
+                    },
+                    IsKosher = false,
+                    IsVegeterian = false,
                 },
                 new MeetUp
                 {
@@ -70,7 +86,15 @@ namespace Foddies.Models
                     MeetUpFoodType = FoodType.Home,
                     Title = "ראש השנה אצל משפחת גולן",
                     Capacity = 3,
-                    Host = "Ran"
+                    Host = new User
+                    { 
+                        Id=3, 
+                        Name="Eric", 
+                        Password="123", 
+                        Email="eric@mail.com" 
+                    },
+                    IsKosher = true,
+                    IsVegeterian = true
                 }
             };
 
