@@ -7,6 +7,7 @@
         var requests = [
             {
                 Name: "Test",
+                IsVegi: false,
                 Location: {
                     Latitude: 31.850033,
                     Longitude: 34.6500523
