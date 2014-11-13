@@ -30,3 +30,34 @@ c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\bin\Antlr3.R
 c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\obj\Debug\Foddies.csprojResolveAssemblyReference.cache
 c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\obj\Debug\Foddies.dll
 c:\users\eric\documents\visual studio 2013\Projects\Foddies\Foddies\obj\Debug\Foddies.pdb
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Foddies.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Foddies.pdb
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Antlr3.Runtime.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Newtonsoft.Json.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Net.Http.Formatting.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Helpers.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Http.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Http.WebHost.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Mvc.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Optimization.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Razor.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.WebPages.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.WebPages.Razor.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\WebGrease.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Newtonsoft.Json.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Net.Http.Formatting.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Helpers.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Http.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Http.WebHost.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Mvc.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Optimization.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.Razor.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.WebPages.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\System.Web.WebPages.Razor.xml
+C:\Users\Lian\Desktop\BiteMe\Foddies\bin\Antlr3.Runtime.pdb
+C:\Users\Lian\Desktop\BiteMe\Foddies\obj\Debug\Foddies.csprojResolveAssemblyReference.cache
+C:\Users\Lian\Desktop\BiteMe\Foddies\obj\Debug\Foddies.dll
+C:\Users\Lian\Desktop\BiteMe\Foddies\obj\Debug\Foddies.pdb
