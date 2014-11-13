@@ -5,9 +5,19 @@ using System.Web;
 
 namespace Foddies.Models
 {
-    public enum FoodType
+    public static class FoodType
     {
-        Home,
-        Resturant
+        public static List<string> FoodTypeList = new List<string>
+        {
+            "מקסיקני",
+            "אסייאתי",
+            "מרוקאי",
+            "טריפוליטאי",
+            "איטלקי",
+            "אמריקאי",
+            "ים תיכוני",
+            "הודי",
+            "רוסי"
+        };
     }
 }

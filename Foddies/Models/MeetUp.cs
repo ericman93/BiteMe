@@ -15,7 +15,7 @@ namespace Foddies.Models
 
         public Location HostLocation { get; set; }
 
-        public FoodType MeetUpFoodType { get; set; }
+        public HostType MeetUpFoodType { get; set; }
 
         public string Address { get; set; }
         
