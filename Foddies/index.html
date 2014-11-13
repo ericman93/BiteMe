@@ -1,16 +1,27 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="foodiesApp">
 <head>
-    <title></title>
+    <title>Foodies</title>
 
+    <!-- CSS -->
     <link href="app/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="app/css/foodies.css" rel="stylesheet" />
     
-    <script src="app/js/lib/bower_components/angular/angular.min.js"></script>
-    <script src="app/js/lib/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- Lib -->
+    <script src="app/js/lib/bower_components/angular/angular.js"></script>
+    <script src="app/js/lib/bower_components/angular-route/angular-route.js"></script>
+
     <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="app/js/services/meetupsService.js"></script>
+
+    <!-- Controller -->
+    <script src="app/js/controllers/meetupController.js"></script>
+
 </head>
 <body>
-    Hello
-    {{1+2}}
+    <h1>Foodies :)</h1>
+    <div ng-view></div>
 </body>
 </html>
