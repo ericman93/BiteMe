@@ -11,10 +11,12 @@
       $scope.selectedRequest = undefined;
 
       $scope.requetsts = Meetups.getMeetups().then(function (data) {
+          console.log(data)
           $scope.requetsts = data;
-      }, function (data) {
-
-      });;
+      }, function (error) {
+          $scope.requetsts = []
+          alert(error)
+      });
 
       $scope.selectMeetup = function (meetup) {
           $scope.selectedRequest = meetup;
@@ -25,7 +27,7 @@
               return israel;
           }
           else {
-              return $scope.selectedRequest.Location;
+              return $scope.selectedRequest.MeetUpLocation;
           }
       }
 
