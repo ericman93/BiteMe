@@ -142,8 +142,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FoodType.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MeetUp.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\User.cs" />
+=======
+    <Compile Include="Models\MeetUpRepository.cs" />
+>>>>>>> 1a106c18dc6dfb2e1cb17dbe3d35b4732a217ea0
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

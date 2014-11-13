@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foddies.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,31 +10,14 @@ namespace Foddies.Controllers
 {
     public class MeetUpController : ApiController
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+        public IEnumerable<MeetUp> Get()
         {
-            return new string[] { "value1", "value2" };
+            return MeetUpRepository.GetAllMeetUps();
         }
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        public MeetUp Get(int meetUpId)
         {
-            return "value";
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
+            return MeetUpRepository.GetMeetUpById(meetUpId);
         }
     }
 }
