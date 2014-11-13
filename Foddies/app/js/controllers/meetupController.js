@@ -36,8 +36,12 @@
           });
 
           google.maps.event.addListener(currnetMarker, 'click', function () {
-              showModal(meetup);
+              showModal(meetup, 'meetupInfo', 'MeetupInfoController');
           });
+      }
+
+      $scope.createRequest = function () {
+          showModal(undefined, 'newRequest', 'NewRequestController')
       }
 
       $scope.getLocation = function () {
@@ -49,7 +53,6 @@
           }
       }
 
-
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||
                  ($scope.filter.vegi == true && request.IsVegeterian == true);
@@ -60,14 +63,14 @@
                  ($scope.filter.kosher == true && request.IsKosher == true);
       };
 
-      function showModal(meetup) {
+      function showModal(state, modalHtml, controllerName) {
           var modalInstance = $modal.open({
-              templateUrl: 'partials/meetupInfo.html',
-              controller: 'MeetupInfoController',
+              templateUrl: 'partials/' + modalHtml + '.html',
+              controller: controllerName,
               size: 'lg',
               resolve: {
-                  meetup: function () {
-                      return meetup;
+                  state: function () {
+                      return state;
                   }
               }
           });
