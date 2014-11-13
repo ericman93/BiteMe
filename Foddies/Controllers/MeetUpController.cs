@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace Foddies.Controllers
@@ -15,14 +16,24 @@ namespace Foddies.Controllers
             return MeetUpRepository.GetAllMeetUps();
         }
 
-        public MeetUp Get(int id)
-        {
-            return MeetUpRepository.GetMeetUpById(id);
-        }
-
         public void Post([FromBody]MeetUp newMeetUp)
         {
             MeetUpRepository.AddMeetUp(newMeetUp);
+        }
+
+        public HttpResponseMessage Get(int hostId)
+        {
+            int sessionUserId = (int)HttpContext.Current.Session["Id"];
+
+            if (hostId != sessionUserId)
+            {
+                return new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.Unauthorized
+                };
+            }
+
+            return Request.CreateResponse<IEnumerable<MeetUp>>(MeetUpRepository.GetMeetUpsByHostId(hostId));
         }
     }
 }
