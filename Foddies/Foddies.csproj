@@ -163,7 +163,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodTypes.cs" />
-    <Compile Include="Models\HostType.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
