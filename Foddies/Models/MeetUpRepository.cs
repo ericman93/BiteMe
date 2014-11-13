@@ -21,13 +21,13 @@ namespace Foddies.Models
                     MeetUpDate = new DateTime(2014, 11, 20, 20, 0, 0),
                     MeetUpLocation = new Location
                     {
-                        Latitude = 15.0,
-                        Longitude = 30.0
+                        Latitude = 32.058,
+                        Longitude = 34.779
                     },
                     HostLocation = new Location
                     {
-                        Latitude = 45.0,
-                        Longitude = 60.0
+                        Latitude = 32.058,
+                        Longitude = 34.779
                     },
                     MeetUpFoodType = FoodType.Home,
                     Title = "משפחת זריהן מארחת בשישי",
@@ -48,13 +48,13 @@ namespace Foddies.Models
                     MeetUpDate = new DateTime(2014, 11, 21, 21, 0, 0),
                     MeetUpLocation = new Location
                     {
-                        Latitude = 15.0,
-                        Longitude = 30.0
+                        Latitude = 32.045,
+                        Longitude = 34.766
                     },
                     HostLocation = new Location
                     {
-                        Latitude = 45.0,
-                        Longitude = 60.0
+                        Latitude = 32.065,
+                        Longitude = 34.866
                     },
                     MeetUpFoodType = FoodType.Resturant,
                     Title = "BBB",
@@ -75,13 +75,13 @@ namespace Foddies.Models
                     MeetUpDate = new DateTime(2014, 11, 20, 22, 0, 0),
                     MeetUpLocation = new Location
                     {
-                        Latitude = 15.0,
-                        Longitude = 30.0
+                        Latitude = 32.003,
+                        Longitude = 34.780
                     },
                     HostLocation = new Location
                     {
-                        Latitude = 45.0,
-                        Longitude = 60.0
+                        Latitude = 32.003,
+                        Longitude = 34.780
                     },
                     MeetUpFoodType = FoodType.Home,
                     Title = "ראש השנה אצל משפחת גולן",
