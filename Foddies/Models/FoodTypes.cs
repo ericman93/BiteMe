@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Foddies.Models
 {
-    public static class FoodTypeList
+    public static class FoodTypes
     {
         public static List<string> FoodTypeList = new List<string>
         {

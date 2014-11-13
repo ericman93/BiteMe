@@ -30,7 +30,7 @@ namespace Foddies.Models
                         Longitude = 34.779
                     },
                     HostType = HostTypeEnum.Home,
-                    FoodType = FoodTypeList.FoodTypeList[2],
+                    FoodType = FoodTypes.FoodTypeList[2],
                     Address = "יצחק רבין 14, חדרה",
                     Title = "משפחת זריהן מארחת בשישי",
                     Capacity = 3,
@@ -61,7 +61,7 @@ namespace Foddies.Models
                     },
                     HostType = HostTypeEnum.Resturant,
 
-                    FoodType = FoodTypeList.FoodTypeList[4],
+                    FoodType = FoodTypes.FoodTypeList[4],
                     Address = "הרצוג 13, תל אביב",
                     Title = "BBB",
                     Capacity = 2,
@@ -91,7 +91,7 @@ namespace Foddies.Models
                         Longitude = 34.780
                     },
                     HostType = HostTypeEnum.Home,
-                    FoodType = FoodTypeList.FoodTypeList[1],
+                    FoodType = FoodTypes.FoodTypeList[1],
                     Address = "המסגר 14, חיפה",
                     Title = "ראש השנה אצל משפחת גולן",
                     Capacity = 3,
