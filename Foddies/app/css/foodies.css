@@ -32,3 +32,9 @@ body,
 .rtl{
     direction: rtl;
 }
+
+#logo {
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+}
