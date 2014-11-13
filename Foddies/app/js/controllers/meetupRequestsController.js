@@ -1,5 +1,7 @@
-﻿foodiesApp.controller('MeetupRequestsController', ['Meetups', '$scope', '$modal',
-  function (Meetups, $scope, $modal) {
+﻿foodiesApp.controller('MeetupRequestsController', ['Meetups', '$scope', '$modalInstance', 'state',
+  function (Meetups, $scope, $modalInstance, state) {
+
+      $scope.request = state;
 
       $scope.requests = Meetups.getMeetups().then(function (data) {
           console.log(data)
@@ -12,9 +14,9 @@
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
 
-      $scope.setAccepted = function (request, accepted) {
-          request.Accepted = accepted;
+          $scope.setAccepted = function (request, accepted) {
+              request.Accepted = accepted;
+          }
       }
-  }
 
-]);
+  }]);

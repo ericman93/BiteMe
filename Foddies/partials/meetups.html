@@ -7,6 +7,7 @@
             <button type="button" class="btn btn-default" ng-click="filter.kosher = !filter.kosher" ng-class="filter.kosher ? 'btn-info' : ''">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
             </button>
+            <button ng-click="showRequest()">Lian</button>
         </div>
     </div>
 
@@ -22,7 +23,7 @@
     </div>
 
     <div id="map">
-        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="12" id="mapDirective">
+        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="14" id="mapDirective">
             <!--<marker id="meetupLocation" position="{{selectedRequest.MeetUpLocation.Latitude}},{{selectedRequest.MeetUpLocation.Longitude}}"
                     on-click="markerClick()" ng-if="selectedRequest" title="Dine Place" animation="DROP"></marker>-->
         </map>

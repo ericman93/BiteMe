@@ -10,7 +10,7 @@
           vegi: false,
           kosher: false
       };
-
+      $scope.selectedRequest = undefined;
       $scope.requetsts = Meetups.getMeetups().then(function (data) {
           console.log(data)
           $scope.requetsts = data;
@@ -19,7 +19,9 @@
           alert(error)
       });
 
-      $scope.selectedRequest = undefined;
+      $scope.showRequest = function () {
+          showModal($scope.requetsts[0], 'meetupRequests', 'MeetupRequestsController')
+      }
 
       $scope.selectMeetup = function (meetup) {
           $scope.selectedRequest = meetup;
