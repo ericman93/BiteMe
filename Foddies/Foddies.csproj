@@ -153,6 +153,7 @@
     <Content Include="app\js\lib\bower_components\angular\angular-csp.css" />
     <Content Include="app\js\lib\bower_components\angular\angular.js" />
     <Content Include="app\js\lib\bower_components\angular\angular.min.js" />
+    <Content Include="app\js\services\authService.js" />
     <Content Include="app\js\services\meetupsService.js" />
     <Content Include="partials\meetups.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
