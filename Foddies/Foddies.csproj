@@ -112,6 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\js\filtters\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -142,15 +143,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\js\controllers\meetupController.js" />
+    <Content Include="app\js\directives\angular-google-maps.min.js" />
+    <Content Include="app\js\directives\map.js" />
+    <Content Include="app\js\directives\map_controller.js" />
+    <Content Include="app\js\lib\bower_components\angular-route\angular-route.js" />
+    <Content Include="app\js\lib\bower_components\angular-route\angular-route.min.js" />
+    <Content Include="app\js\lib\bower_components\angular\angular-csp.css" />
+    <Content Include="app\js\lib\bower_components\angular\angular.js" />
+    <Content Include="app\js\lib\bower_components\angular\angular.min.js" />
+    <Content Include="app\js\services\meetupsService.js" />
+    <Content Include="partials\meetups.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\css\bootstrap.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="app\css\bootstrap.css" />
+    <Content Include="app\css\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
-    <Content Include="Content\js\bootstrap.js" />
-    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="app\js\lib\bootstrap.js" />
+    <Content Include="app\js\lib\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
     <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
@@ -162,12 +175,23 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="Content\js\jquery-1.10.2.intellisense.js" />
-    <Content Include="Content\js\jquery-1.10.2.js" />
-    <Content Include="Content\js\jquery-1.10.2.min.js" />
-    <Content Include="Content\js\modernizr-2.6.2.js" />
-    <Content Include="Content\js\respond.js" />
-    <Content Include="Content\js\respond.min.js" />
+    <Content Include="app\js\lib\bower_components\angular-route\.bower.json" />
+    <Content Include="app\js\lib\bower_components\angular-route\angular-route.min.js.map" />
+    <Content Include="app\js\lib\bower_components\angular-route\bower.json" />
+    <Content Include="app\js\lib\bower_components\angular-route\package.json" />
+    <Content Include="app\js\lib\bower_components\angular-route\README.md" />
+    <Content Include="app\js\lib\bower_components\angular\.bower.json" />
+    <Content Include="app\js\lib\bower_components\angular\angular.min.js.gzip" />
+    <Content Include="app\js\lib\bower_components\angular\angular.min.js.map" />
+    <Content Include="app\js\lib\bower_components\angular\bower.json" />
+    <Content Include="app\js\lib\bower_components\angular\package.json" />
+    <Content Include="app\js\lib\bower_components\angular\README.md" />
+    <None Include="app\js\lib\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\js\lib\jquery-1.10.2.js" />
+    <Content Include="app\js\lib\jquery-1.10.2.min.js" />
+    <Content Include="app\js\lib\modernizr-2.6.2.js" />
+    <Content Include="app\js\lib\respond.js" />
+    <Content Include="app\js\lib\respond.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -176,14 +200,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
-    <Content Include="Content\css\Site.css" />
-    <Content Include="Content\js\_references.js" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Content\js\jquery-1.10.2.min.map" />
+    <Content Include="app\css\foodies.css" />
+    <Content Include="app\js\lib\_references.js" />
+    <Content Include="app\js\lib\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,9 +1,9 @@
 ﻿foodiesApp.factory('Meetups', ['$http', '$q', function ($http, $q) {
-    var servies = {}
+    var meetupService = {}
 
-    servies.getMeetups = function(){
+    meetupService.getMeetups = function () {
 
     }
 
-    return servies;
+    return meetupService;
 }]);

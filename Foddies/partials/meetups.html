@@ -1,9 +1,10 @@
 ﻿<div id="meetups">
-    <div id="requests">
-        Requests will be here
-    </div>
+    <button ng-click="changeLocation()">Change Location</button>
+        <div id="requests">
+            Requests will be here
+        </div>
 
-    <div id="map">
-        Map
-    </div>
+        <div id="map">
+            <map center="{{selectedLocation.lat}}, {{selectedLocation.lon}}" zoom="8"></map>
+        </div>
 </div>
