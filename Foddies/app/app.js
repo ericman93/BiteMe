@@ -2,8 +2,10 @@
 
 /* App Module */
 
+var ngMap = angular.module('ngMap', []);
+
 var foodiesApp = angular.module('foodiesApp', [
-  'ngRoute',
+  'ngRoute', 'ngMap',
 ]);
 
 foodiesApp.config(['$routeProvider',
