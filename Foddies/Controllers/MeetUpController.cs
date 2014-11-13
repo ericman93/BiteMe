@@ -60,19 +60,19 @@ namespace Foddies.Controllers
         }
 
         // Decline or accepting a user request to a meetup
-        public HttpResponseMessage Post([FromBody]int MeetUpId, [FromBody]int RequestingUserId, [FromBody]bool? isAccepted)
+        public HttpResponseMessage Post([FromBody]MeetUpApproveInfo approveInfo)
         {
-            MeetUp meetUp = MeetUpRepository.GetMeetUpById(MeetUpId);
+            MeetUp meetUp = MeetUpRepository.GetMeetUpById(approveInfo.MeetUpId);
             if (null == meetUp)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
             }
-            UserRequest userRequest = meetUp.UserRequests.FirstOrDefault(request => request.RequestingUser.Id == RequestingUserId);
+            UserRequest userRequest = meetUp.UserRequests.FirstOrDefault(request => request.RequestingUser.Id == approveInfo.RequestingUserId);
             if (null == userRequest)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
             }
-            userRequest.Accepted = isAccepted;
+            userRequest.Accepted = approveInfo.isAccepted;
 
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
         }
