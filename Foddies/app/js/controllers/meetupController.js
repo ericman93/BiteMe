@@ -33,7 +33,7 @@
 
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||
-                 ($scope.filter.vegi == true && request.IsVegi == true);
+                 ($scope.filter.vegi == true && request.IsVegeterian == true);
       };
 
       $scope.filterKosher = function (request) {
