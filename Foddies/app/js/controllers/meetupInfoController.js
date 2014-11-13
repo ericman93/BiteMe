@@ -3,10 +3,15 @@
       $scope.meetup = meetup;
 
       $scope.askToJoin = function () {
+          $scope.message = undefined;
+
           Meetups.askToJoin($scope.meetup.Id).then(function () {
               console.log('joined :)')
+              $scope.result = true;
+              $scope.message = "ווהוו בקשתך מחכה לתגובה מהמארח"
           }, function (error) {
-              alert(error)
+              $scope.result = false;
+              $scope.message = error;
           })
       }
 

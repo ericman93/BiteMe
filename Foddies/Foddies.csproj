@@ -163,6 +163,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodTypes.cs" />
+    <Compile Include="Models\HostType.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
@@ -186,7 +187,9 @@
     <Content Include="app\js\directives\angular-google-maps.min.js" />
     <Content Include="app\js\directives\map.js" />
     <Content Include="app\js\directives\map_controller.js" />
+    <Content Include="app\js\filtters\alertFilter.js" />
     <Content Include="app\js\filtters\checkmarkFilter.js" />
+    <Content Include="app\js\filtters\hostTypeFilter.js" />
     <Content Include="app\js\lib\bootstrap.js" />
     <Content Include="app\js\lib\bootstrap.min.js" />
     <Content Include="app\js\lib\bower_components\angular-route\angular-route.js" />

@@ -34,15 +34,15 @@ namespace Foddies.Controllers
         }
 
         [HttpPut]
-        public HttpResponseMessage AddUserReuqest([FromUri] int id, [FromBody]int MeetUpId)
+        public HttpResponseMessage AddUserReuqest([FromUri] int id, [FromBody]MeetUpApproveInfo requestInfo)
         {
-            MeetUp meetUp = MeetUpRepository.GetMeetUpById(MeetUpId);
+            MeetUp meetUp = MeetUpRepository.GetMeetUpById(id);
             if (null == meetUp)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
             }
 
-            User user = UserRepository.GetUserById(id);
+            User user = UserRepository.GetUserById(requestInfo.RequestingUserId);
             if (null == user)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };

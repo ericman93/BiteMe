@@ -1,6 +1,6 @@
 ﻿<div class="rtl">
     <div class="modal-header">
-        <h3 class="modal-title">{{meetup.Title}}</h3>
+        <h3 class="modal-title"><span ng-class="meetup.HostType | hostTypeColor" class="label">{{meetup.HostType | hostTypeName}}</span> {{meetup.Title}}</h3>
     </div>
     <div class="modal-body">
         <table class="table">
@@ -13,6 +13,14 @@
                 <td>{{meetup.MeetUpDate}}</td>
             </tr>
             <tr>
+                <th>כתובת</th>
+                <td>{{meetup.Address}}</td>
+            </tr>
+            <tr>
+                <th>סוג אוכל</th>
+                <td>{{meetup.FoodType}}</td>
+            </tr>
+            <tr>
                 <th>כשר</th>
                 <td><span class="glyphicon" ng-class="meetup.IsKosher | checkmark"></span></td>
             </tr>
@@ -21,6 +29,11 @@
                 <td><span class="glyphicon" ng-class="meetup.IsVegeterian | checkmark"></span></td>
             </tr>
         </table>
+        
+        <h4 class="alert centerText" ng-class="result | alert" ng-show="message">
+            <span class="glyphicon" ng-class="result | checkmark"></span> {{message}}
+        </h4>
+
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" ng-click="askToJoin()">הצטרף</button>

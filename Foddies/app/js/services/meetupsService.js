@@ -25,10 +25,10 @@
         var deferred = $q.defer();
 
         var data = {
-            MeetUpId: meetupId,
+            RequestingUserId: Auth.userId,
         };
 
-        $http.post(meetupApiUrl+Auth.userId, data)
+        $http.put(meetupApiUrl + meetupId, data)
         .success(function (meetups) {
             deferred.resolve("ווהוו ביקשת להצטרף")
         })
