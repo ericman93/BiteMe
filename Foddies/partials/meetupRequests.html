@@ -1,0 +1,21 @@
+﻿<div class="rtl">
+    <div class="modal-header">
+        <h3 class="modal-title">בקשות הצטרפות</h3>
+    </div>
+    <div class="modal-body">
+        <table class="table">
+            <tr ng-repeat="request in requests">
+                <td>
+                    {{request.RequestingUser.Name}}
+                    {{request.RequestingUser.Email}}
+                    {{request.Accepted}}
+                    <button class="btn btn-success" ng-click="setAccepted(request, true)">אשר</button>
+                    <button class="btn btn-danger" ng-click="setAccepted(request, false)">דחה</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" ng-click="close()">סגור</button>
+    </div>
+</div>

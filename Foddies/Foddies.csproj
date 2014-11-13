@@ -133,7 +133,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\js\filtters\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -162,10 +161,10 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MeetUpApproveInfo.cs" />
-    <Compile Include="Models\UserRepository.cs" />
-    <Compile Include="Models\FoodType.cs" />
+    </Compile>    <Compile Include="Models\FoodTypes.cs" />
+    <Compile Include="Models\HostType.cs" />
+    <Compile Include="Models\MeetUpApproveInfo.cs" />    <Compile Include="Models\UserRepository.cs" />
+    <Compile Include="Models\HostTypeEnum.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MeetUp.cs" />
     <Compile Include="Models\User.cs" />
@@ -183,10 +182,17 @@
     <Content Include="app\js\controllers\chatController.js" />
     <Content Include="app\js\controllers\loginController.js" />
     <Content Include="app\js\controllers\meetupController.js" />
+    <Content Include="app\js\controllers\meetupRequestsController.js" />
+    <Content Include="app\js\controllers\newRequestController.js" />
+    <Content Include="app\js\controllers\meetupInfoController.js" />
     <Content Include="app\js\directives\angular-google-maps.min.js" />
     <Content Include="app\js\directives\chatDirective.js" />
     <Content Include="app\js\directives\map.js" />
     <Content Include="app\js\directives\map_controller.js" />
+    <Content Include="app\js\filtters\alertFilter.js" />
+    <Content Include="app\js\filtters\checkmarkFilter.js" />
+    <Content Include="app\js\filtters\hostTypeColorFilter.js" />
+    <Content Include="app\js\filtters\hostTypeNameFilter.js" />
     <Content Include="app\js\lib\bootstrap.js" />
     <Content Include="app\js\lib\bootstrap.min.js" />
     <Content Include="app\js\lib\bower_components\angular-route\angular-route.js" />
@@ -201,6 +207,7 @@
     <Content Include="app\js\lib\respond.js" />
     <Content Include="app\js\lib\respond.min.js" />
     <None Include="app\js\lib\_references.js" />
+    <Content Include="app\js\lib\ui-bootstrap-custom-tpls-0.10.0.js" />
     <Content Include="app\js\services\authService.js" />
     <Content Include="app\js\services\meetupsService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -246,7 +253,10 @@
     <Content Include="Content\js\respond.min.js" />
     <Content Include="partials\chat.html" />
     <Content Include="partials\login.html" />
+    <Content Include="partials\meetupInfo.html" />
+    <Content Include="partials\meetupRequests.html" />
     <Content Include="partials\meetups.html" />
+    <Content Include="partials\newRequest.html" />
     <Content Include="Scripts\jquery.signalR-2.1.2.js" />
     <Content Include="Scripts\jquery.signalR-2.1.2.min.js" />
     <Content Include="Web.config" />

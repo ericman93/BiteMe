@@ -11,17 +11,13 @@ namespace Foddies.Controllers
 {
     public class MeetUpController : ApiController
     {
+        [HttpGet]
         public IEnumerable<MeetUp> Get()
         {
             return MeetUpRepository.GetAllMeetUps();
         }
 
-        public HttpResponseMessage Post([FromBody]MeetUp newMeetUp)
-        {
-            MeetUpRepository.AddMeetUp(newMeetUp);
-            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
-        }
-
+        [HttpGet]
         public HttpResponseMessage Get(int hostId)
         {
             int sessionUserId = (int)HttpContext.Current.Session["Id"];
@@ -37,16 +33,16 @@ namespace Foddies.Controllers
             return Request.CreateResponse<IEnumerable<MeetUp>>(MeetUpRepository.GetMeetUpsByHostId(hostId));
         }
 
-        // Adding a user request for a meetup
-        public HttpResponseMessage Post([FromBody]int MeetUpId, [FromBody]int RequestingUserId)
+        [HttpPut]
+        public HttpResponseMessage AddUserReuqest([FromUri] int id, [FromBody]MeetUpApproveInfo requestInfo)
         {
-            MeetUp meetUp = MeetUpRepository.GetMeetUpById(MeetUpId);
+            MeetUp meetUp = MeetUpRepository.GetMeetUpById(id);
             if (null == meetUp)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
             }
 
-            User user = UserRepository.GetUserById(RequestingUserId);
+            User user = UserRepository.GetUserById(requestInfo.RequestingUserId);
             if (null == user)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
@@ -55,19 +51,26 @@ namespace Foddies.Controllers
             // request pending
             UserRequest request = new UserRequest { Accepted = null, RequestingUser = user };
             meetUp.UserRequests.Add(request);
-            
+
             return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
         }
 
-        // Decline or accepting a user request to a meetup
-        public HttpResponseMessage Post([FromBody]MeetUpApproveInfo approveInfo)
+        [HttpPost]
+        public HttpResponseMessage Create([FromBody]MeetUp newMeetUp)
         {
-            MeetUp meetUp = MeetUpRepository.GetMeetUpById(approveInfo.MeetUpId);
+            MeetUpRepository.AddMeetUp(newMeetUp);
+            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
+        }
+
+        [HttpPatch]
+        public HttpResponseMessage ApproveOrDecline([FromUri] int id, [FromBody]MeetUpApproveInfo approveInfo)
+        {
+            MeetUp meetUp = MeetUpRepository.GetMeetUpById(id);
             if (null == meetUp)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
             }
-            UserRequest userRequest = meetUp.UserRequests.FirstOrDefault(request => request.RequestingUser.Id == approveInfo.RequestingUserId);
+            UserRequest userRequest = meetUp.UserRequests.FirstOrDefault(request => request.RequestingUser.Id == id);
             if (null == userRequest)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };

@@ -1,5 +1,5 @@
 ﻿<div id="meetups">
-    <div id="filterBar">
+    <div id="filterBar" class="rtl">
         <div id="filterButtons" class="container">
             <button type="button" class="btn btn-default" ng-click="filter.vegi = !filter.vegi" ng-class="filter.vegi ? 'btn-success' : ''">
                 <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
@@ -7,21 +7,31 @@
             <button type="button" class="btn btn-default" ng-click="filter.kosher = !filter.kosher" ng-class="filter.kosher ? 'btn-info' : ''">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
             </button>
+            <button ng-click="showRequest()">Lian</button>
         </div>
     </div>
 
     <div id="requests">
         <ul class="nav nav-pills nav-stacked">
             <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher">
-                <a href="" ng-click="selectMeetup(request)">{{request.Title}}</a>
+                <a href="" ng-click="selectMeetup(request)">
+                    <span class="glyphicon" ng-class="request.HostType == 0 ? 'glyphicon-home' : 'glyphicon-glass'" aria-hidden="true"> </span>
+                    {{request.Title}}
+                </a>
             </li>
         </ul>
     </div>
 
     <div id="map">
-        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="8" id="mapDirective">
-            <marker id="meetupLocation" position="{{selectedRequest.MeetUpLocation.Latitude}},{{selectedRequest.MeetUpLocation.Longitude}}"
-                    ng-if="selectedRequest" title="Dine Place"></marker>
+        <map center="{{getLocation().Latitude}}, {{getLocation().Longitude}}" zoom="14" id="mapDirective">
+            <!--<marker id="meetupLocation" position="{{selectedRequest.MeetUpLocation.Latitude}},{{selectedRequest.MeetUpLocation.Longitude}}"
+                    on-click="markerClick()" ng-if="selectedRequest" title="Dine Place" animation="DROP"></marker>-->
         </map>
     </div>
+</div>
+
+<div id="newRequest">
+    <button id="newReuqestBtn" ng-click="createRequest()">
+        <img src="//ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/2x/bt_speed_dial_2x.png">
+    </button>
 </div>

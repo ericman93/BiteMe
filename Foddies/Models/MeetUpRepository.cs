@@ -29,7 +29,8 @@ namespace Foddies.Models
                         Latitude = 32.058,
                         Longitude = 34.779
                     },
-                    MeetUpFoodType = FoodType.Home,
+                    HostType = HostTypeEnum.Home,
+                    FoodType = FoodTypes.FoodTypeList[2],
                     Address = "יצחק רבין 14, חדרה",
                     Title = "משפחת זריהן מארחת בשישי",
                     Capacity = 3,
@@ -40,6 +41,7 @@ namespace Foddies.Models
                         Password="123",
                         Email="ziv@mail.com"
                     },
+                    UserRequests = new List<UserRequest>(),
                     IsKosher = true,
                     IsVegeterian = false
                 },
@@ -57,7 +59,9 @@ namespace Foddies.Models
                         Latitude = 32.065,
                         Longitude = 34.866
                     },
-                    MeetUpFoodType = FoodType.Resturant,
+                    HostType = HostTypeEnum.Resturant,
+
+                    FoodType = FoodTypes.FoodTypeList[4],
                     Address = "הרצוג 13, תל אביב",
                     Title = "BBB",
                     Capacity = 2,
@@ -68,6 +72,7 @@ namespace Foddies.Models
                         Password="123", 
                         Email="lian@mail.com" 
                     },
+                    UserRequests = new List<UserRequest>(),
                     IsKosher = false,
                     IsVegeterian = false,
                 },
@@ -85,7 +90,8 @@ namespace Foddies.Models
                         Latitude = 32.003,
                         Longitude = 34.780
                     },
-                    MeetUpFoodType = FoodType.Home,
+                    HostType = HostTypeEnum.Home,
+                    FoodType = FoodTypes.FoodTypeList[1],
                     Address = "המסגר 14, חיפה",
                     Title = "ראש השנה אצל משפחת גולן",
                     Capacity = 3,
@@ -96,6 +102,7 @@ namespace Foddies.Models
                         Password="123", 
                         Email="eric@mail.com" 
                     },
+                    UserRequests = new List<UserRequest>(),
                     IsKosher = true,
                     IsVegeterian = true
                 }

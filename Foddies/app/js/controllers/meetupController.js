@@ -1,15 +1,16 @@
-﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope',
-  function (Meetups, $scope) {
+﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope', '$modal',
+  function (Meetups, $scope, $modal) {
       var israel = {
           Latitude: 31.850033,
           Longitude: 34.6500523
       }
+      var currnetMarker = undefined;
+
       $scope.filter = {
           vegi: false,
           kosher: false
       };
       $scope.selectedRequest = undefined;
-
       $scope.requetsts = Meetups.getMeetups().then(function (data) {
           console.log(data)
           $scope.requetsts = data;
@@ -18,8 +19,31 @@
           alert(error)
       });
 
+      $scope.showRequest = function () {
+          showModal($scope.requetsts[0], 'meetupRequests', 'MeetupRequestsController')
+      }
+
       $scope.selectMeetup = function (meetup) {
           $scope.selectedRequest = meetup;
+
+          if (currnetMarker != undefined) {
+              currnetMarker.setMap(undefined);
+          }
+
+          currnetMarker = new google.maps.Marker({
+              position: new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude),
+              map: $scope.map,
+              draggable: false,
+              animation: google.maps.Animation.DROP,
+          });
+
+          google.maps.event.addListener(currnetMarker, 'click', function () {
+              showModal(meetup, 'meetupInfo', 'MeetupInfoController');
+          });
+      }
+
+      $scope.createRequest = function () {
+          showModal(undefined, 'newRequest', 'NewRequestController')
       }
 
       $scope.getLocation = function () {
@@ -40,5 +64,23 @@
           return $scope.filter.kosher == false ||
                  ($scope.filter.kosher == true && request.IsKosher == true);
       };
+
+      function showModal(state, modalHtml, controllerName) {
+          var modalInstance = $modal.open({
+              templateUrl: 'partials/' + modalHtml + '.html',
+              controller: controllerName,
+              size: 'lg',
+              resolve: {
+                  state: function () {
+                      return state;
+                  }
+              }
+          });
+
+          modalInstance.result.then(function (selectedItem) {
+              $scope.selected = selectedItem;
+          }, function () {
+          });
+      }
   }
 ]);
