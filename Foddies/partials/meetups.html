@@ -8,14 +8,16 @@
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
             </button>
             <select ng-model="filter.foodType" ng-options="foodType as foodType for foodType in foodTypes"
-                    class="btn btn-default dropdown-toggle select-space"></select>
+                    class="btn btn-default dropdown-toggle select-space">
+            </select>
+            <input type="text" placeholder="איזור גיאוגרפי" id="locationFiler" ng-model="filter.location" class="form-control" />
             <button ng-click="showRequest()">Lian</button>
         </div>
     </div>
 
     <div id="requests">
         <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher | filter: filterFoodType">
+            <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher | filter: filterFoodType | filter: filterLocation">
                 <a href="" ng-click="selectMeetup(request)">
                     <span class="glyphicon" ng-class="request.HostType == 0 ? 'glyphicon-home' : 'glyphicon-glass'" aria-hidden="true"> </span>
                     {{request.Title}}
