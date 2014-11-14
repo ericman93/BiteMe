@@ -25,6 +25,18 @@
           alert(error)
       });
 
+      var geocoder = new google.maps.Geocoder();;
+      function codeAddress() {
+          var address = " חדרה רחוב העבודה 13";
+          geocoder.geocode({ 'address': address }, function (results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                  console.log(results[0].geometry.location)
+              } else {
+                  alert('Geocode was not successful for the following reason: ' + status);
+              }
+          });
+      }
+
       $scope.selectMeetup = function (meetup) {
           //$scope.selectedRequest = meetup;
           var point = new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude);
