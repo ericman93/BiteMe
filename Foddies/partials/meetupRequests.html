@@ -1,4 +1,4 @@
-﻿<div class="rtl" ng-show="isChatEnabled">
+﻿<div class="rtl" ng-hide="isChatEnabled">
     <div class="modal-header">
         <h3 class="modal-title">בקשות הצטרפות</h3>
     </div>
@@ -9,10 +9,10 @@
                     {{request.RequestingUser.Name}}
                 </td>
                 <td>
-                    <div class="btn-toolbar">
-                        <button class="btn btn-success pull-left" ng-disabled="request.Accepted" ng-click="setAccepted(request, true)">אשר</button>
-                        <button class="btn btn-danger pull-left" ng-disabled="!request.Accepted" ng-click="setAccepted(request, false)">דחה</button>
-                        <button class="btn btn btn-success glyphicon glyphicon-comment pull-left" ng-click="isChatEnabled = !isChatEnabled"></button>
+                    <div class="btn-toolbar pull-left">
+                        <button class="btn btn-success" ng-disabled="request.Accepted" ng-click="setAccepted(request, true)">אשר</button>
+                        <button class="btn btn-danger" ng-disabled="!request.Accepted" ng-click="setAccepted(request, false)">דחה</button>
+                        <button class="btn btn btn-success glyphicon glyphicon-comment" ng-click="isChatEnabled = !isChatEnabled"></button>
                     </div>
                 </td>
             </tr>
@@ -21,4 +21,7 @@
     <div class="modal-footer">
         <button class="btn btn-warning" ng-click="close()">סגור</button>
     </div>
+</div>
+<div ng-show="isChatEnabled">
+    <div chat></div>
 </div>
