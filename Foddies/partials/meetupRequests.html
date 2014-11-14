@@ -1,4 +1,4 @@
-﻿<div class="rtl">
+﻿<div class="rtl" ng-show="isChatEnabled">
     <div class="modal-header">
         <h3 class="modal-title">בקשות הצטרפות</h3>
     </div>
@@ -12,7 +12,7 @@
                     <div class="btn-toolbar">
                         <button class="btn btn-success pull-left" ng-disabled="request.Accepted" ng-click="setAccepted(request, true)">אשר</button>
                         <button class="btn btn-danger pull-left" ng-disabled="!request.Accepted" ng-click="setAccepted(request, false)">דחה</button>
-                        <button class="btn btn btn-success glyphicon glyphicon-comment pull-left" ng-click="isChatEnabled=!isChatEnabled"></button>
+                        <button class="btn btn btn-success glyphicon glyphicon-comment pull-left" ng-click="isChatEnabled = !isChatEnabled"></button>
                     </div>
                 </td>
             </tr>
