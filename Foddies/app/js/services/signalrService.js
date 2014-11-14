@@ -34,7 +34,7 @@
 
         $scope.changeChatEnabled = function () {
             console.log("change chat enabled callback");
-            signalrService.chatEnabledChangedCallback(!$scope.isChatEnabled);
+            signalrService.chatEnabledChangedCallback(!$scope.isChatEnabled);       
         };
     };
 
