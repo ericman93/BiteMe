@@ -123,6 +123,7 @@ namespace Foddies.Models
 
         public static void AddMeetUp(MeetUp newMeetup)
         {
+            newMeetup.Id = _meetUps.Max(m => m.Id) + 1;
             _meetUps.Add(newMeetup);
         }
 
