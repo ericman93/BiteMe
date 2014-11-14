@@ -7,9 +7,11 @@
 
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
-
-          $scope.setAccepted = function (request, accepted) {
-              request.Accepted = accepted;
-          }
       }
-  }]);
+
+
+      $scope.setAccepted = function (userRequest, accepted) {
+          userRequest.Accepted = accepted;
+      }
+  }
+  ]);
