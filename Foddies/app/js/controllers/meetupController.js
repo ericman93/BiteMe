@@ -53,6 +53,33 @@
           showModal(undefined, 'newRequest', 'NewRequestController')
       }
 
+      $scope.changeView = function (viewType) {
+          switch (viewType) {
+              case (0):
+                  $scope.requetsts = Meetups.getMeetups().then(function (data) {
+                      console.log(':)')
+                      $scope.requetsts = data;
+                  }, function (error) {
+                      $scope.requetsts = []
+                      alert(error)
+                  });
+                  break;
+              case (1):
+                  console.log('I have asked')
+                  break;
+              case (2):
+                  $scope.requetsts = Meetups.getMeetupsHostByMe().then(function (data) {
+                      console.log(':)')
+                      $scope.requetsts = data;
+                  }, function (error) {
+                      $scope.requetsts = []
+                      alert(error)
+                  });
+                  break;
+          }
+      }
+
+
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||
                  ($scope.filter.vegi == true && request.IsVegeterian == true);
