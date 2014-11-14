@@ -6,11 +6,15 @@
         <table class="table">
             <tr ng-repeat="request in requests">
                 <td>
-                    {{request.RequestingUser.Name}}
-                    {{request.RequestingUser.Email}}
-                    {{request.Accepted}}
-                    <button class="btn btn-success" ng-click="setAccepted(request, true)">אשר</button>
-                    <button class="btn btn-danger" ng-click="setAccepted(request, false)">דחה</button>
+                    {{request.RequestingUser.Name}},
+                    {{request.RequestingUser.Email}},
+                    {{request.Accepted}},
+                </td>
+                <td>
+                    <div class="btn-toolbar">
+                        <button class="btn btn-success pull-left" ng-click="setAccepted(request, true)">אשר</button>
+                        <button class="btn btn-danger pull-left" ng-click="setAccepted(request, false)">דחה</button>
+                    </div>
                 </td>
             </tr>
         </table>

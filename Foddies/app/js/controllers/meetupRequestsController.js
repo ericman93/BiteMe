@@ -1,15 +1,9 @@
 ﻿foodiesApp.controller('MeetupRequestsController', ['Meetups', '$scope', '$modalInstance', 'state',
   function (Meetups, $scope, $modalInstance, state) {
 
-      $scope.request = state;
-
-      $scope.requests = Meetups.getMeetups().then(function (data) {
-          console.log(data)
-          $scope.requetsts = data;
-      }, function (error) {
-          $scope.requetsts = []
-          alert(error)
-      });
+      $scope.meetup = state;
+      console.log(state)
+      $scope.requests = state.UserRequests
 
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
@@ -18,5 +12,4 @@
               request.Accepted = accepted;
           }
       }
-
   }]);
