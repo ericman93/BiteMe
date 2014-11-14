@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Foddies.Models
 {
-    public class MeetUpApproveInfo
+    public class UserApproveInfo
     {
-        public MeetUp meetUp { get; set; }
+        public int RequestingUserId { get; set; }
 
         public bool isAccepted { get; set; }
     }
