@@ -20,17 +20,13 @@ namespace Foddies.Controllers
         [HttpGet]
         public HttpResponseMessage Get(int hostId)
         {
-            int sessionUserId = (int)HttpContext.Current.Session["Id"];
-
-            if (hostId != sessionUserId)
-            {
-                return new HttpResponseMessage
-                {
-                    StatusCode = HttpStatusCode.Unauthorized
-                };
-            }
-
             return Request.CreateResponse<IEnumerable<MeetUp>>(MeetUpRepository.GetMeetUpsByHostId(hostId));
+        }
+
+        [HttpGet]
+        public IEnumerable<MeetUp> GetUsersRequests(int userId)
+        {
+            return MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId));
         }
 
         [HttpPut]

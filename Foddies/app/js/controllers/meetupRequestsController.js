@@ -1,6 +1,6 @@
-﻿foodiesApp.controller('MeetupRequestsController', ['Meetups', '$scope', '$modalInstance', 'state',
-  function (Meetups, $scope, $modalInstance, state) {
-
+﻿foodiesApp.controller('MeetupRequestsController', ['Auth', '$scope', '$modalInstance', 'state',
+  function (Auth, $scope, $modalInstance, state) {
+      console.log(Auth.userId);
       $scope.meetup = state;
       console.log(state)
       $scope.requests = state.UserRequests
@@ -9,6 +9,7 @@
           $modalInstance.dismiss('cancel');
       }
 
+      $scope.isChatEnabled = false;
 
       $scope.setAccepted = function (userRequest, accepted) {
           userRequest.Accepted = accepted;
