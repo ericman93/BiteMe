@@ -5,6 +5,7 @@
           Longitude: 34.971392
       }
       var currnetMarker = undefined;
+      var currnetViewType = 0;
 
       $scope.filter = {
           vegi: false,
@@ -24,10 +25,6 @@
           alert(error)
       });
 
-      $scope.showRequest = function () {
-          showModal($scope.requetsts[0], 'meetupRequests', 'MeetupRequestsController')
-      }
-
       $scope.selectMeetup = function (meetup) {
           //$scope.selectedRequest = meetup;
           var point = new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude);
@@ -45,7 +42,11 @@
           });
 
           google.maps.event.addListener(currnetMarker, 'click', function () {
-              showModal(meetup, 'meetupInfo', 'MeetupInfoController');
+              if (currnetViewType == 0) {
+                  showModal(meetup, 'meetupInfo', 'MeetupInfoController');
+              } else {
+                  showModal(meetup, 'meetupRequests', 'MeetupRequestsController');
+              }
           });
       }
 
@@ -54,10 +55,10 @@
       }
 
       $scope.changeView = function (viewType) {
+          currnetViewType = viewType;
           switch (viewType) {
               case (0):
                   $scope.requetsts = Meetups.getMeetups().then(function (data) {
-                      console.log(':)')
                       $scope.requetsts = data;
                   }, function (error) {
                       $scope.requetsts = []
@@ -69,7 +70,6 @@
                   break;
               case (2):
                   $scope.requetsts = Meetups.getMeetupsHostByMe().then(function (data) {
-                      console.log(':)')
                       $scope.requetsts = data;
                   }, function (error) {
                       $scope.requetsts = []

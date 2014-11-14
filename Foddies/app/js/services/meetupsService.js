@@ -66,6 +66,10 @@
     meetupService.createRequest = function (meetup) {
         var deferred = $q.defer();
 
+        meetup.Host = {
+            Id: Auth.userId
+        };
+
         $http.post(meetupApiUrl, meetup)
         .success(function (meetups) {
             deferred.resolve("תודה שהצעת לעזור לאנשים !")
