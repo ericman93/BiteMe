@@ -1,14 +1,10 @@
 ﻿<div id="chat">
-    <div id="messages">
-        <textarea rows="10" cols="70" ng-model="messages"></textarea>
-    </div>
-    
+        <textarea class="form-control" rows="10" ng-model="messages"></textarea>
     <br />
-
-    <div id="newMessage">
-        <input type="text" ng-model="newMessage" size="50"/>
-        <button type="button" ng-click="sendNewMessage()">
+    <div class="form-group btn-toolbar">
+        <input type="text" class="form-control pull-right" style="width:94%" ng-model="newMessage" size="7"/>
+            <button class="btn btn-sm btn-success pull-left" style="width:5%" ng-click="sendNewMessage()">
             שלח 
         </button>
-    </div>
+        </div>
 </div>
