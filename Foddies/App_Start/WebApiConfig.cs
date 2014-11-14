@@ -21,8 +21,6 @@ namespace Foddies
             );
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
-
-            System.Web.HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
         }
     }
 }

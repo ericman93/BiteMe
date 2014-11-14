@@ -11,9 +11,9 @@ namespace Foddies.Controllers
 {
     public class LoginController : ApiController
     {
-        public bool Post([FromBody]User user)
+        public int Post([FromBody]User user)
         {
-            return true;
+            return UserRepository.GetUserByEmail(user.Email).Id;
         }
     }
 }
