@@ -1,5 +1,5 @@
-﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope', '$modal',
-  function (Meetups, $scope, $modal) {
+﻿foodiesApp.controller('MeetupController', ['StaticValues', 'Meetups', '$scope', '$modal',
+  function (StaticValues, Meetups, $scope, $modal) {
       $scope.israel = {
           Latitude: 32.59075,
           Longitude: 34.971392
@@ -8,8 +8,12 @@
 
       $scope.filter = {
           vegi: false,
-          kosher: false
+          kosher: false,
+          foodType: undefined
       };
+      $scope.foodTypes = StaticValues.foodTypes
+      $scope.foodTypes.unshift(undefined)
+
       $scope.selectedRequest = undefined;
       $scope.requetsts = Meetups.getMeetups().then(function (data) {
           console.log(data)
@@ -48,15 +52,6 @@
           showModal(undefined, 'newRequest', 'NewRequestController')
       }
 
-      //$scope.getLocation = function () {
-      //    if ($scope.selectedRequest == undefined) {
-      //        return israel;
-      //    }
-      //    else {
-      //        return $scope.selectedRequest.MeetUpLocation;
-      //    }
-      //}
-
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||
                  ($scope.filter.vegi == true && request.IsVegeterian == true);
@@ -65,6 +60,11 @@
       $scope.filterKosher = function (request) {
           return $scope.filter.kosher == false ||
                  ($scope.filter.kosher == true && request.IsKosher == true);
+      };
+
+      $scope.filterFoodType = function (request) {
+          return $scope.filter.foodType == undefined ||
+                 ($scope.filter.foodType == request.FoodType);
       };
 
       function showModal(state, modalHtml, controllerName) {

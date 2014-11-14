@@ -154,7 +154,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="ChatLogic\UserRequestChat.cs" />
+    <Compile Include="ChatLogic\UserRequestChatHub.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeetUpController.cs" />
     <Compile Include="Controllers\StaticValuesController.cs" />
@@ -164,7 +164,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodTypes.cs" />
-    <Compile Include="Models\HostType.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
@@ -182,12 +181,14 @@
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\foodies.css" />
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\js\controllers\chatController.js" />
     <Content Include="app\js\controllers\loginController.js" />
     <Content Include="app\js\controllers\meetupController.js" />
     <Content Include="app\js\controllers\meetupRequestsController.js" />
     <Content Include="app\js\controllers\newRequestController.js" />
     <Content Include="app\js\controllers\meetupInfoController.js" />
     <Content Include="app\js\directives\angular-google-maps.min.js" />
+    <Content Include="app\js\directives\chatDirective.js" />
     <Content Include="app\js\directives\map.js" />
     <Content Include="app\js\directives\map_controller.js" />
     <Content Include="app\js\filtters\alertFilter.js" />
@@ -254,6 +255,7 @@
     <Content Include="Content\js\modernizr-2.6.2.js" />
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\respond.min.js" />
+    <Content Include="partials\chat.html" />
     <Content Include="partials\login.html" />
     <Content Include="partials\meetupInfo.html" />
     <Content Include="partials\meetupRequests.html" />
