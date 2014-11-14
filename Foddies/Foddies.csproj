@@ -157,6 +157,7 @@
     <Compile Include="ChatLogic\UserRequestChat.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeetUpController.cs" />
+    <Compile Include="Controllers\StaticValuesController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -207,7 +208,8 @@
     <Content Include="app\js\lib\respond.js" />
     <Content Include="app\js\lib\respond.min.js" />
     <None Include="app\js\lib\_references.js" />
-    <Content Include="app\js\lib\ui-bootstrap-custom-tpls-0.10.0.js" />
+    <Content Include="app\js\lib\bootsrap-angular-modal.js" />
+    <Content Include="app\js\lib\bootsrap-angular-tab.js" />
     <Content Include="app\js\services\authService.js" />
     <Content Include="app\js\services\meetupsService.js" />
     <Content Include="app\js\services\staticValuesService.js" />
