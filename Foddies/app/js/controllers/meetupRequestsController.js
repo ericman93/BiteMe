@@ -1,22 +1,27 @@
 ﻿foodiesApp.controller('MeetupRequestsController', ['Meetups', '$scope', '$modalInstance', 'state',
   function (Meetups, $scope, $modalInstance, state) {
 
-      $scope.request = state;
-
-      $scope.requests = Meetups.getMeetups().then(function (data) {
-          console.log(data)
-          $scope.requetsts = data;
-      }, function (error) {
-          $scope.requetsts = []
-          alert(error)
-      });
+foodiesApp.controller('MeetupRequestsController', ['Auth', '$scope', '$modalInstance', 'state',
+  function (Auth, $scope, $modalInstance, state) {
+      console.log(Auth.userId);
+      $scope.meetup = state;
+      console.log(state)
+      $scope.requests = state.UserRequests
 
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
-
-          $scope.setAccepted = function (request, accepted) {
-              request.Accepted = accepted;
-          }
       }
 
-  }]);
+
+      $scope.setAccepted = function (userRequest, accepted) {
+          userRequest.Accepted = accepted;
+      }
+  }
+  ]);
+      $scope.isChatEnabled = false;
+
+      $scope.setAccepted = function (userRequest, accepted) {
+          userRequest.Accepted = accepted;
+      }
+  }
+  ]);
