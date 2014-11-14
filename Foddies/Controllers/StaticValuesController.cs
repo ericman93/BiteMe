@@ -17,6 +17,14 @@ namespace Foddies.Controllers
             {
                 return FoodTypes.FoodTypeList;
             }
+            else if (listName.ToUpper() == "RESTURANTS")
+            {
+                return Resturants.ResturantsList;
+            }
+            else if (listName.ToUpper() == "BRANCH")
+            {
+                return Resturants.BranchList;
+            }
 
             return Enumerable.Empty<string>();
         }

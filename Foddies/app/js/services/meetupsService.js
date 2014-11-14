@@ -40,6 +40,25 @@
         return deferred.promise;
     }
 
+    meetupService.getMyReuqestedMeetups = function () {
+        var deferred = $q.defer();
+
+        $http.get(meetupApiUrl + '?userId=' + Auth.userId)
+        .success(function (meetups) {
+            deferred.resolve(meetups)
+        })
+        .error(function (data, status, headers, config) {
+            var errorMessage = data.Message;
+            if (status >= 500 || !errorMessage) {
+                errorMessage = "שגיאה :(";
+            }
+
+            deferred.reject(errorMessage)
+        });
+
+        return deferred.promise;
+    }
+
     meetupService.askToJoin = function (meetupId) {
         var deferred = $q.defer();
 
@@ -67,8 +86,9 @@
         var deferred = $q.defer();
 
         meetup.Host = {
-            Id: Auth.userId
+            Id: Auth.userId,
         };
+        meetup.UserRequests = []
 
         $http.post(meetupApiUrl, meetup)
         .success(function (meetups) {

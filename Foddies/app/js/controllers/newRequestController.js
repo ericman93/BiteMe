@@ -2,6 +2,9 @@
   function (StaticValues, Meetups, $scope, $modalInstance, state) {
 
       $scope.foodTypes = StaticValues.foodTypes
+      $scope.resturants = StaticValues.resturants
+      $scope.brances = StaticValues.brances
+
       $scope.meetup = {
           HostType: 0
       }

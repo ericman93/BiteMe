@@ -13,8 +13,26 @@
                 <input type="text" ng-model="meetup.Address" placeholder="כתובת" class="form-control" />
             </tab>
             <tab heading="מסעדה" select="setFoodLocation(1)">
-                <input type="text" ng-model="meetup.Address" placeholder="מסעדה" class="form-control" />
-                <input type="text" placeholder="סניף" class="form-control" />
+                <table cellspacing="10">
+                    <tr>
+                        <td>
+                            מסעדה
+                        </td>
+                        <td>
+                            <select ng-model="meetup.Resurant" ng-options="resturant as resturant for resturant in resturants"
+                                    class="btn btn-default dropdown-toggle select-space"></select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            סניף
+                        </td>
+                        <td>
+                            <select ng-model="meetup.Branch" ng-options="brance as brance for brance in brances"
+                                    class="btn btn-default dropdown-toggle select-space"></select>
+                        </td>
+                    </tr>
+                </table>
             </tab>
         </tabset>
 
