@@ -22,6 +22,11 @@
           $scope.chatToUserId = toUserId;
 
           SignalR.chatToUserId = toUserId;
+
+          SignalR.registerToChatEnabledChanged(function (isChatEnabled) {
+              console.log("parent chat enabled changed");
+              $scope.isChatEnabled = isChatEnabled;
+          });
       };
 
       $scope.setAccepted = function (userRequest, accepted) {

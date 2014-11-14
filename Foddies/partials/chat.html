@@ -1,4 +1,4 @@
-﻿<div id="chat">
+﻿<div id="chat" style="padding:20px">
         <textarea class="form-control" rows="10" ng-model="messages"></textarea>
     <br />
     <div class="form-group btn-toolbar">
@@ -6,7 +6,7 @@
             <button class="btn btn-sm btn-success pull-left" style="width:10%" ng-click="sendNewMessage()">
             שלח
         </button>
-                    <button class="btn btn-sm btn-danger pull-left" style="width:7%" ng-click="isChatEnabled = !isChatEnabled">
+                    <button class="btn btn-sm btn-danger pull-left" style="width:7%" ng-click="changeChatEnabled()">
             סגור
         </button>
         </div>

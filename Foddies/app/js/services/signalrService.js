@@ -2,8 +2,8 @@
     var signalrService = {}
 
     signalrService.init = function ($scope, Auth) {
-
-        $scope.messages = "asd";
+        
+        $scope.messages = "";
 
         var chatHub = $.connection.userRequestChatHub;
 
@@ -11,7 +11,7 @@
 
         chatHub.client.onReceivedMessage = function (message) {
             console.log("onReceivedMessage");
-
+            console.log($scope.messages);
             $scope.messages += message;
             $scope.messages += '\n';
         };
@@ -29,8 +29,20 @@
             console.log(signalrService.chatToUserId);
 
             chatHub.server.sendMessage(signalrService.chatToUserId, $scope.newMessage);
+
         };
-    }
+
+        $scope.changeChatEnabled = function () {
+            console.log("change chat enabled callback");
+            signalrService.chatEnabledChangedCallback(!$scope.isChatEnabled);
+        };
+    };
+
+
+    signalrService.registerToChatEnabledChanged = function (callback) {
+        console.log("register to callback");
+        signalrService.chatEnabledChangedCallback = callback;
+    };
 
     return signalrService;
 }]);
