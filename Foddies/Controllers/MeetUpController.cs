@@ -38,7 +38,7 @@ namespace Foddies.Controllers
                     }
                 }
             }
-            return new MeetUpApproveInfo { meetUp = MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId)) , isAccepted};
+            return approveList;
         }
 
         [HttpPut]
