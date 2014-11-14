@@ -23,3 +23,7 @@ foodiesApp.config(['$routeProvider',
             redirectTo: '/meetups'
         });
   }]);
+
+foodiesApp.run(['StaticValues', function (StaticValues) {
+    StaticValues.init();
+}])

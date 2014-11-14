@@ -1,8 +1,8 @@
 ﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope', '$modal',
   function (Meetups, $scope, $modal) {
-      var israel = {
-          Latitude: 31.850033,
-          Longitude: 34.6500523
+      $scope.israel = {
+          Latitude: 32.59075,
+          Longitude: 34.971392
       }
       var currnetMarker = undefined;
 
@@ -24,14 +24,16 @@
       }
 
       $scope.selectMeetup = function (meetup) {
-          $scope.selectedRequest = meetup;
+          //$scope.selectedRequest = meetup;
+          var point = new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude);
+          $scope.map.panTo(point);
 
           if (currnetMarker != undefined) {
               currnetMarker.setMap(undefined);
           }
 
           currnetMarker = new google.maps.Marker({
-              position: new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude),
+              position: point,
               map: $scope.map,
               draggable: false,
               animation: google.maps.Animation.DROP,
@@ -46,14 +48,14 @@
           showModal(undefined, 'newRequest', 'NewRequestController')
       }
 
-      $scope.getLocation = function () {
-          if ($scope.selectedRequest == undefined) {
-              return israel;
-          }
-          else {
-              return $scope.selectedRequest.MeetUpLocation;
-          }
-      }
+      //$scope.getLocation = function () {
+      //    if ($scope.selectedRequest == undefined) {
+      //        return israel;
+      //    }
+      //    else {
+      //        return $scope.selectedRequest.MeetUpLocation;
+      //    }
+      //}
 
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||

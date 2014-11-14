@@ -1,14 +1,30 @@
-﻿foodiesApp.controller('NewRequestController', ['Meetups', '$scope', '$modalInstance', 'state',
-  function (Meetups, $scope, $modalInstance, state) {
-      $scope.meetup = state;
+﻿foodiesApp.controller('NewRequestController', ['StaticValues', 'Meetups', '$scope', '$modalInstance', 'state',
+  function (StaticValues, Meetups, $scope, $modalInstance, state) {
+
+      $scope.foodTypes = StaticValues.foodTypes
+      $scope.meetup = {
+          HostType: 0
+      }
 
       $scope.create = function () {
-          $scope.result = true;
-          $scope.message = "בוא למקדנולדס אם אתה גבר"
+          console.log($scope.meetup)
+
+          Meetups.createRequest($scope.meetup).then(function (message) {
+              $scope.result = true;
+              $scope.message = message
+          }, function (error) {
+              $scope.result = false;
+              $scope.message = error
+          })
       }
 
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
+      }
+
+      $scope.setFoodLocation = function (location) {
+          //$scope.selectedFoodLocation = location;
+          $scope.meetup.HostType = location;
       }
   }
 ]);

@@ -163,6 +163,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FoodTypes.cs" />
+    <Compile Include="Models\HostType.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
@@ -209,6 +210,7 @@
     <Content Include="app\js\lib\ui-bootstrap-custom-tpls-0.10.0.js" />
     <Content Include="app\js\services\authService.js" />
     <Content Include="app\js\services\meetupsService.js" />
+    <Content Include="app\js\services\staticValuesService.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />

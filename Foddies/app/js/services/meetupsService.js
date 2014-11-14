@@ -44,5 +44,24 @@
         return deferred.promise;
     }
 
+    meetupService.createRequest = function (meetup) {
+        var deferred = $q.defer();
+
+        $http.post(meetupApiUrl, meetup)
+        .success(function (meetups) {
+            deferred.resolve("תודה שהצעת לעזור לאנשים !")
+        })
+        .error(function (data, status, headers, config) {
+            var errorMessage = data.Message;
+            if (status >= 500 || !errorMessage) {
+                errorMessage = "שגיאה :(";
+            }
+
+            deferred.reject(errorMessage)
+        });
+
+        return deferred.promise;
+    }
+
     return meetupService;
 }]);

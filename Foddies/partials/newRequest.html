@@ -3,10 +3,28 @@
         הצעה חדשה
     </div>
     <div class="modal-body">
-        קוקו קוקו
+        <input type="text" ng-model="meetup.Title" placeholder="שם אירוע" class="form-control" />
+        
+        <tabset id="requestSpesific">
+            <tab heading="ביתי" select="setFoodLocation(0)">
+                סוג אוכל : 
+                <select ng-model="meetup.FoodType" ng-options="foodType as foodType for foodType in foodTypes"
+                        class="btn btn-default dropdown-toggle select-space"></select>
+                <input type="text" ng-model="meetup.Address" placeholder="כתובת" class="form-control" />
+            </tab>
+            <tab heading="מסעדה" select="setFoodLocation(1)">
+                <input type="text" ng-model="meetup.Address" placeholder="מסעדה" class="form-control" />
+                <input type="text" placeholder="סניף" class="form-control" />
+            </tab>
+        </tabset>
+
+        <h4 class="alert centerText" ng-class="result | alert" ng-show="message">
+            <span class="glyphicon" ng-class="result | checkmark"></span> {{message}}
+        </h4>
     </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" ng-click="create()">צור</button>
-        <button class="btn btn-warning" ng-click="close()">סגור</button>
-    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="close()">סגור</button>
+    <button class="btn btn-primary" ng-click="create()">צור</button>
+</div>
 </div>
