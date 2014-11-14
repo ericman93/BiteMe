@@ -71,3 +71,8 @@ body,
     margin: 15px;
     position: fixed;
 }
+
+#locationFiler{
+    width: 200px;
+    display: initial;
+}

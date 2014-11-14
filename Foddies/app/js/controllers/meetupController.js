@@ -9,7 +9,8 @@
       $scope.filter = {
           vegi: false,
           kosher: false,
-          foodType: undefined
+          foodType: undefined,
+          location: undefined
       };
       $scope.foodTypes = StaticValues.foodTypes
       $scope.foodTypes.unshift(undefined)
@@ -65,6 +66,11 @@
       $scope.filterFoodType = function (request) {
           return $scope.filter.foodType == undefined ||
                  ($scope.filter.foodType == request.FoodType);
+      };
+
+      $scope.filterLocation = function (request) {
+          return $scope.filter.location == undefined ||
+                 (request.Address.indexOf($scope.filter.location) != -1);
       };
 
       function showModal(state, modalHtml, controllerName) {
