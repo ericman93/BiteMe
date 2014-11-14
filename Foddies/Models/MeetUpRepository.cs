@@ -41,7 +41,7 @@ namespace Foddies.Models
                         Password="123",
                         Email="ziv@mail.com"
                     },
-                    UserRequests = new List<UserRequest>{new UserRequest{Accepted = null, RequestingUser = UserRepository.GetUserById(1)}, new UserRequest{Accepted = null, RequestingUser = UserRepository.GetUserById(2)}},
+                    UserRequests = new List<UserRequest>(),
                     IsKosher = true,
                     IsVegeterian = false
                 },
@@ -72,7 +72,7 @@ namespace Foddies.Models
                         Password="123", 
                         Email="lian@mail.com" 
                     },
-                    UserRequests = new List<UserRequest>{new UserRequest{Accepted = null, RequestingUser = UserRepository.GetUserById(1)}, new UserRequest{Accepted = null, RequestingUser = UserRepository.GetUserById(2)}},
+                    UserRequests = new List<UserRequest>(),
                     IsKosher = false,
                     IsVegeterian = false,
                 },
@@ -102,7 +102,7 @@ namespace Foddies.Models
                         Password="123", 
                         Email="eric@mail.com" 
                     },
-                    UserRequests = new List<UserRequest>{new UserRequest{Accepted = null, RequestingUser = UserRepository.GetUserById(1)}, new UserRequest{Accepted = null, RequestingUser = UserRepository.GetUserById(2)}},
+                    UserRequests = new List<UserRequest>(),
                     IsKosher = true,
                     IsVegeterian = true
                 }
