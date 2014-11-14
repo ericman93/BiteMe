@@ -183,7 +183,6 @@
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\foodies.css" />
     <Content Include="app\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="app\js\controllers\chatController.js" />
     <Content Include="app\js\controllers\loginController.js" />
     <Content Include="app\js\controllers\meetupController.js" />
     <Content Include="app\js\controllers\meetupRequestsController.js" />

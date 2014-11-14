@@ -7,40 +7,51 @@
 
         var chatHub = $.connection.userRequestChatHub;
 
-        console.log(chatHub);
-
+        /* Client Received Message */
         chatHub.client.onReceivedMessage = function (message) {
-            console.log("onReceivedMessage");
-            console.log($scope.messages);
+
             $scope.messages += message;
             $scope.messages += '\n';
+
+            console.log('Client received new message.');
+            console.log(message);
+            console.log('Total messages are:');
+            console.log($scope.messages);
+
         };
 
+        /* Finished Connection To Server */
         $.connection.hub.start().done(function () {
-            console.log("auth user id: " + Auth.userId);
+
             chatHub.server.connect(Auth.userId);
 
-            console.log('Client connected to chat server!');
+            console.log('Finished connecting to server.');
+
         });
 
-        $scope.sendNewMessage = function (message) {
-            console.log("sendNewMessage");
-            console.log("this is sparta from chat to user id:");
-            console.log(signalrService.chatToUserId);
+        /* Client sends message back to server */
+        $scope.sendNewMessage = function () {
+
+            console.log('Entered send message to server.');
+            console.log('messages are:');
+            console.log($scope.messages);
+            console.log('message is:');
+            console.log($scope.newMessage);
 
             chatHub.server.sendMessage(signalrService.chatToUserId, $scope.newMessage);
+
+            console.log('Message was sent to server.');
+            console.log($scope.newMessage);
 
         };
 
         $scope.changeChatEnabled = function () {
-            console.log("change chat enabled callback");
             signalrService.chatEnabledChangedCallback(!$scope.isChatEnabled);       
         };
     };
 
 
     signalrService.registerToChatEnabledChanged = function (callback) {
-        console.log("register to callback");
         signalrService.chatEnabledChangedCallback = callback;
     };
 

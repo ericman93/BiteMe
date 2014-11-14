@@ -4,14 +4,11 @@
         scope: true,
         controller: function (SignalR, Auth, $scope) {
 
-            console.log("this is sparta from chat to user id:");
-            console.log($scope.chatToUserId);
+            console.log('Entering ChatDirective controller.');
 
             SignalR.init($scope, Auth);
 
-            console.log('hello from parent');
-            console.log($scope.isChatEnabled);
-            console.log($scope.meetup);
+            console.log('Exiting ChatDirective controller.');
 
         },
         templateUrl: 'partials/chat.html'
