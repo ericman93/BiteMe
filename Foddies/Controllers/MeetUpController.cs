@@ -26,7 +26,7 @@ namespace Foddies.Controllers
         [HttpGet]
         public IEnumerable<MeetUp> GetUsersRequests(int userId)
         {
-            return MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId));
+            return MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId)); 
         }
 
         [HttpPut]

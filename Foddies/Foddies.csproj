@@ -164,8 +164,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\FoodTypes.cs" />
     <Compile Include="Models\MeetUpApproveInfo.cs" />
+    <Compile Include="Models\FoodTypes.cs" />
+    <Compile Include="Models\Resturants.cs" />
     <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
     <Compile Include="Models\Location.cs" />
@@ -213,6 +214,7 @@
     <Content Include="app\js\lib\bootsrap-angular-modal.js" />
     <Content Include="app\js\lib\bootsrap-angular-tab.js" />
     <Content Include="app\js\services\authService.js" />
+    <Content Include="app\js\services\geoLocationService.js" />
     <Content Include="app\js\services\meetupsService.js" />
     <Content Include="app\js\services\signalrService.js" />
     <Content Include="app\js\services\staticValuesService.js" />

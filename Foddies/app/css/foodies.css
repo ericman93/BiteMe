@@ -4,6 +4,10 @@
     direction: rtl;
 }
 
+#filterButtons{
+    padding-right: calc(20% - 15px);
+}
+
 #map {
     float: left;
     width: 80%;
@@ -73,6 +77,6 @@ body,
 }
 
 #locationFiler{
-    width: 200px;
+    width: 250px;
     display: initial;
 }

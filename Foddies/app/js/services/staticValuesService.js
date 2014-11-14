@@ -1,7 +1,9 @@
 ﻿foodiesApp.factory('StaticValues', ['$http', '$q', function ($http, $q) {
     var valuesApiUrl = "/api/StaticValues"
     var serivce = {
-        foodTypes : []
+        foodTypes: [],
+        resturants: [],
+        brances: []
     }
 
     serivce.init = function () {
@@ -9,6 +11,18 @@
             serivce.foodTypes = data;
         }, function () {
             serivce.foodTypes = data;
+        })
+
+        getValues('RESTURANTS').then(function (data) {
+            serivce.resturants = data;
+        }, function () {
+            serivce.resturants = data;
+        })
+
+        getValues('BRANCH').then(function (data) {
+            serivce.brances = data;
+        }, function () {
+            serivce.brances = data;
         })
     }
 

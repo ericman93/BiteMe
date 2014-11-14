@@ -42,10 +42,10 @@
           });
 
           google.maps.event.addListener(currnetMarker, 'click', function () {
-              if (currnetViewType == 0) {
-                  showModal(meetup, 'meetupInfo', 'MeetupInfoController');
+              if (currnetViewType == 2) {
+                  showModal(meetup, 'meetupRequests', 'MeetupRequestsController')
               } else {
-                  showModal(meetup, 'meetupRequests', 'MeetupRequestsController');
+                  showModal(meetup, 'meetupInfo', 'MeetupInfoController');
               }
           });
       }
@@ -66,7 +66,12 @@
                   });
                   break;
               case (1):
-                  console.log('I have asked')
+                  $scope.requetsts = Meetups.getMyReuqestedMeetups().then(function (data) {
+                      $scope.requetsts = data;
+                  }, function (error) {
+                      $scope.requetsts = []
+                      alert(error)
+                  });
                   break;
               case (2):
                   $scope.requetsts = Meetups.getMeetupsHostByMe().then(function (data) {
