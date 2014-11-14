@@ -26,7 +26,17 @@ namespace Foddies.Controllers
         [HttpGet]
         public IEnumerable<MeetUp> GetUsersRequests(int userId)
         {
-            return MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId)); 
+            IEnumerable<MeetUp> myRequests = MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId));
+            foreach (MeetUp request in myRequests)
+            {
+                UserRequest user = request.UserRequests.FirstOrDefault(u => u.RequestingUser.Id == userId);
+                if(user != null)
+                {
+                    request.IsAprrove = user.Accepted ?? false;
+                }
+            }
+
+            return myRequests;
         }
 
         [HttpPut]
@@ -66,7 +76,7 @@ namespace Foddies.Controllers
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };
             }
-            UserRequest userRequest = meetUp.UserRequests.FirstOrDefault(request => request.RequestingUser.Id == id);
+            UserRequest userRequest = meetUp.UserRequests.FirstOrDefault(request => request.RequestingUser.Id == approveInfo.RequestingUserId);
             if (null == userRequest)
             {
                 return new HttpResponseMessage { StatusCode = HttpStatusCode.NotFound };

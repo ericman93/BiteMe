@@ -25,6 +25,7 @@
         <ul class="nav nav-pills nav-stacked">
             <li role="presentation" ng-repeat="request in requetsts | filter: filterVegi | filter: filterKosher | filter: filterFoodType | filter: filterLocation">
                 <a href="" ng-click="selectMeetup(request)">
+                    <span class="glyphicon glyphicon-ok" ng-show="request.IsAprrove" aria-hidden="true" style="color: green"> </span>
                     <span class="glyphicon" ng-class="request.HostType == 0 ? 'glyphicon-home' : 'glyphicon-glass'" aria-hidden="true"> </span>
                     {{request.Title}}
                 </a>
