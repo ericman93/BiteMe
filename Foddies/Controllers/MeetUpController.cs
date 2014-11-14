@@ -24,25 +24,13 @@ namespace Foddies.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<MeetUpApproveInfo> GetUsersRequests(int userId)
+        public IEnumerable<MeetUp> GetUsersRequests(int userId)
         {
-            List<MeetUpApproveInfo> approveList = new List<MeetUpApproveInfo>();
-            foreach (var meetup in MeetUpRepository.GetAllMeetUps())
-            {
-                foreach (var userRequest in meetup.UserRequests)
-                {
-                    if (userRequest.RequestingUser.Id == userId)
-                    {
-                        approveList.Add(new MeetUpApproveInfo { meetUp = meetup, isAccepted = userRequest.Accepted??false });
-                        break;
-                    }
-                }
-            }
-            return approveList;
+            return MeetUpRepository.GetAllMeetUps().Where(meetup => meetup.UserRequests.Any(userRequest => userRequest.RequestingUser.Id == userId)); 
         }
 
         [HttpPut]
-        public HttpResponseMessage AddUserReuqest([FromUri] int id, [FromBody]UserApproveInfo requestInfo)
+        public HttpResponseMessage AddUserReuqest([FromUri] int id, [FromBody]MeetUpApproveInfo requestInfo)
         {
             MeetUp meetUp = MeetUpRepository.GetMeetUpById(id);
             if (null == meetUp)
@@ -71,7 +59,7 @@ namespace Foddies.Controllers
         }
 
         [HttpPatch]
-        public HttpResponseMessage ApproveOrDecline([FromUri] int id, [FromBody]UserApproveInfo approveInfo)
+        public HttpResponseMessage ApproveOrDecline([FromUri] int id, [FromBody]MeetUpApproveInfo approveInfo)
         {
             MeetUp meetUp = MeetUpRepository.GetMeetUpById(id);
             if (null == meetUp)
