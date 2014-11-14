@@ -156,13 +156,16 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="ChatLogic\UserRequestChatHub.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MeetUpController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>    <Compile Include="Models\FoodTypes.cs" />
-    <Compile Include="Models\MeetUpApproveInfo.cs" />    <Compile Include="Models\UserRepository.cs" />
+    </Compile>
+    <Compile Include="Models\FoodTypes.cs" />
+    <Compile Include="Models\MeetUpApproveInfo.cs" />
+    <Compile Include="Models\UserRepository.cs" />
     <Compile Include="Models\HostTypeEnum.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\MeetUp.cs" />
