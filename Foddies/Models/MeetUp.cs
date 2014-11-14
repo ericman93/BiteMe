@@ -32,5 +32,7 @@ namespace Foddies.Models
         public DateTime MeetUpDate { get; set; }
 
         public List<UserRequest> UserRequests { get; set; }
+
+        public bool IsAprrove { get; set; }
     }
 }

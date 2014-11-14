@@ -106,5 +106,29 @@
         return deferred.promise;
     }
 
+    meetupService.setAccepted = function (meetupdId, userId, status) {
+        var deferred = $q.defer();
+
+        var data = {
+            RequestingUserId: userId,
+            isAccepted: status
+        }
+
+        $http({ method: 'PATCH', url: meetupApiUrl + '/' + meetupdId, data: data })
+        .success(function () {
+            deferred.resolve()
+        })
+        .error(function (data, status, headers, config) {
+            var errorMessage = data.Message;
+            if (status >= 500 || !errorMessage) {
+                errorMessage = "שגיאה :(";
+            }
+
+            deferred.reject(errorMessage)
+        });
+
+        return deferred.promise;
+    }
+
     return meetupService;
 }]);

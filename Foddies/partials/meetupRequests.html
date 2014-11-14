@@ -10,9 +10,15 @@
                 </td>
                 <td>
                     <div class="btn-toolbar pull-left">
-                        <button class="btn btn-success" ng-disabled="request.Accepted" ng-click="setAccepted(request, true)">אשר</button>
-                        <button class="btn btn-danger" ng-disabled="!request.Accepted" ng-click="setAccepted(request, false)">דחה</button>
-                        <button class="btn btn btn-success glyphicon glyphicon-comment" ng-click="startChat(request.RequestingUser.Id)"></button>
+                        <button class="btn btn-success" ng-disabled="request.Accepted" ng-click="setAccepted(request, true)">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"> </span>
+                        </button>
+                        <button class="btn btn-danger" ng-disabled="!request.Accepted" ng-click="setAccepted(request, false)">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"> </span>
+                        </button>
+                        <button class="btn btn btn-success" ng-click="startChat(request.RequestingUser.Id)">
+                            <span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>
+                        </button>
                     </div>
                 </td>
             </tr>

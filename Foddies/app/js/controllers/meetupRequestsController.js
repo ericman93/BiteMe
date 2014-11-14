@@ -1,16 +1,13 @@
-﻿foodiesApp.controller('MeetupRequestsController', ['SignalR', 'Auth', '$scope', '$modalInstance', 'state',
-  function (SignalR, Auth, $scope, $modalInstance, state) {
+﻿foodiesApp.controller('MeetupRequestsController', ['Meetups', 'SignalR', 'Auth', '$scope', '$modalInstance', 'state',
+  function (Meetups, SignalR, Auth, $scope, $modalInstance, state) {
 
       console.log(Auth.userId);
       $scope.meetup = state;
-      console.log("lian meet up:");
-      console.log(state);
       $scope.requests = state.UserRequests
 
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
       }
-
 
       $scope.startChat = function (toUserId) {
 
@@ -29,14 +26,21 @@
           });
       };
 
-      $scope.setAccepted = function (userRequest, accepted) {
-          userRequest.Accepted = accepted;
-      }
-
       $scope.isChatEnabled = false;
 
       $scope.setAccepted = function (userRequest, accepted) {
           userRequest.Accepted = accepted;
+
+          console.log(userRequest)
+          console.log(accepted)
+          console.log(state)
+          console.log('----')
+
+          Meetups.setAccepted(state.Id, userRequest.RequestingUser.Id, accepted).then(function () {
+              // success
+          }, function () {
+              console.log('error :O')
+          });
       }
   }
 ]);
