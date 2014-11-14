@@ -14,9 +14,9 @@ namespace Foddies.Models
             #region Mocking User List
             _userList = new List<User>()
             {      
-            new User { Id=1, Name="זיו", Password="123", Email="ziv@mail.com" },
-            new User { Id=2, Name="ליאן", Password="123", Email="lian@mail.com" },
-            new User { Id=3, Name="אריק", Password="123", Email="eric@mail.com" },
+            new User { Id=1, Name="Ziv", Password="123", Email="ziv@mail.com" },
+            new User { Id=2, Name="Lian", Password="123", Email="lian@mail.com" },
+            new User { Id=3, Name="Eric", Password="123", Email="eric@mail.com" },
             };
             #endregion
         }

@@ -1,15 +1,20 @@
-﻿foodiesApp.controller('MeetupController', ['Meetups', '$scope', '$modal',
-  function (Meetups, $scope, $modal) {
-      var israel = {
-          Latitude: 31.850033,
-          Longitude: 34.6500523
+﻿foodiesApp.controller('MeetupController', ['StaticValues', 'Meetups', '$scope', '$modal',
+  function (StaticValues, Meetups, $scope, $modal) {
+      $scope.israel = {
+          Latitude: 32.59075,
+          Longitude: 34.971392
       }
       var currnetMarker = undefined;
 
       $scope.filter = {
           vegi: false,
-          kosher: false
+          kosher: false,
+          foodType: undefined,
+          location: undefined
       };
+      $scope.foodTypes = StaticValues.foodTypes
+      $scope.foodTypes.unshift(undefined)
+
       $scope.selectedRequest = undefined;
       $scope.requetsts = Meetups.getMeetups().then(function (data) {
           console.log(data)
@@ -24,14 +29,16 @@
       }
 
       $scope.selectMeetup = function (meetup) {
-          $scope.selectedRequest = meetup;
+          //$scope.selectedRequest = meetup;
+          var point = new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude);
+          $scope.map.panTo(point);
 
           if (currnetMarker != undefined) {
               currnetMarker.setMap(undefined);
           }
 
           currnetMarker = new google.maps.Marker({
-              position: new google.maps.LatLng(meetup.MeetUpLocation.Latitude, meetup.MeetUpLocation.Longitude),
+              position: point,
               map: $scope.map,
               draggable: false,
               animation: google.maps.Animation.DROP,
@@ -46,15 +53,6 @@
           showModal(undefined, 'newRequest', 'NewRequestController')
       }
 
-      $scope.getLocation = function () {
-          if ($scope.selectedRequest == undefined) {
-              return israel;
-          }
-          else {
-              return $scope.selectedRequest.MeetUpLocation;
-          }
-      }
-
       $scope.filterVegi = function (request) {
           return $scope.filter.vegi == false ||
                  ($scope.filter.vegi == true && request.IsVegeterian == true);
@@ -63,6 +61,16 @@
       $scope.filterKosher = function (request) {
           return $scope.filter.kosher == false ||
                  ($scope.filter.kosher == true && request.IsKosher == true);
+      };
+
+      $scope.filterFoodType = function (request) {
+          return $scope.filter.foodType == undefined ||
+                 ($scope.filter.foodType == request.FoodType);
+      };
+
+      $scope.filterLocation = function (request) {
+          return $scope.filter.location == undefined ||
+                 (request.Address.indexOf($scope.filter.location) != -1);
       };
 
       function showModal(state, modalHtml, controllerName) {

@@ -19,11 +19,11 @@ foodiesApp.config(['$routeProvider',
             templateUrl: 'partials/login.html',
             controller: 'LoginController'
         }).
-        when('/chat', {
-            templateUrl: 'partials/chat.html',
-            controller: 'ChatController'
-        }).
         otherwise({
             redirectTo: '/meetups'
         });
   }]);
+
+foodiesApp.run(['StaticValues', function (StaticValues) {
+    StaticValues.init();
+}])
