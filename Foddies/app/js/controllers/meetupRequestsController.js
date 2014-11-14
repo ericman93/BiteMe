@@ -1,14 +1,28 @@
-﻿foodiesApp.controller('MeetupRequestsController', ['Auth', '$scope', '$modalInstance', 'state',
-  function (Auth, $scope, $modalInstance, state) {
+﻿foodiesApp.controller('MeetupRequestsController', ['SignalR', 'Auth', '$scope', '$modalInstance', 'state',
+  function (SignalR, Auth, $scope, $modalInstance, state) {
+
       console.log(Auth.userId);
       $scope.meetup = state;
-      console.log(state)
+      console.log("lian meet up:");
+      console.log(state);
       $scope.requests = state.UserRequests
 
       $scope.close = function () {
           $modalInstance.dismiss('cancel');
       }
 
+
+      $scope.startChat = function (toUserId) {
+
+          console.log("startChat");
+          console.log(toUserId);
+
+          $scope.isChatEnabled = !$scope.isChatEnabled;
+
+          $scope.chatToUserId = toUserId;
+
+          SignalR.chatToUserId = toUserId;
+      };
 
       $scope.setAccepted = function (userRequest, accepted) {
           userRequest.Accepted = accepted;

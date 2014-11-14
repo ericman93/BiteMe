@@ -36,7 +36,7 @@ namespace Foddies.ChatLogic
 
         public void SendMessage(int toUserId, string message)
         {
-            Clients.Caller.onReceivedMessage(message);
+            Clients.Client(Context.ConnectionId).onReceivedMessage(message);
 
             if (_userIdToConnectionId.Keys.Contains(toUserId))
             {

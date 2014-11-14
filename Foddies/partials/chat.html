@@ -2,9 +2,12 @@
         <textarea class="form-control" rows="10" ng-model="messages"></textarea>
     <br />
     <div class="form-group btn-toolbar">
-        <input type="text" class="form-control pull-right" style="width:89%" ng-model="newMessage" size="7"/>
+        <input type="text" class="form-control pull-right" style="width:80%" ng-model="newMessage" size="7"/>
             <button class="btn btn-sm btn-success pull-left" style="width:10%" ng-click="sendNewMessage()">
-            שלח 
+            שלח
+        </button>
+                    <button class="btn btn-sm btn-danger pull-left" style="width:7%" ng-click="isChatEnabled = !isChatEnabled">
+            סגור
         </button>
         </div>
 </div>
